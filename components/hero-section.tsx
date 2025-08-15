@@ -15,8 +15,8 @@ export function HeroSection() {
   }, [])
 
   const words = [
-    { text: "Transform" ,className:"text-white"},
-    { text: "Your",className:"text-white" },
+    { text: "Transform", className: "text-white" },
+    { text: "Your", className: "text-white" },
     { text: "Business", className: "text-primary dark:text-primary  " },
     { text: "Future", className: "text-primary dark:text-primary " },
   ]
@@ -31,8 +31,10 @@ export function HeroSection() {
   if (!mounted) return null
 
   return (
-    <section className="relative w-full h-[90vh] py-60 flex justify-center items-center
-     min-h-[500px] overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900">
+    <section
+      className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[90vh] py-12 sm:py-20 lg:py-60 flex justify-center items-center
+     min-h-[500px] overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900"
+    >
       {/* Dynamic Background Pattern */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,151,237,0.1),transparent_50%)]" />
@@ -63,51 +65,53 @@ export function HeroSection() {
       </div>
 
       {/* Main Content */}
-      <div className="relative pb-20 z-20 flex items-center justify-center h-full px-6 lg:px-12">
+      <div className="relative pb-8 sm:pb-12 lg:pb-20 z-20 flex items-center justify-center h-full px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Column - Main Content */}
-            <div className="text-center lg:text-left space-y-10">
+            <div className="text-center lg:text-left space-y-6 lg:space-y-10">
               {/* Premium Badge */}
-              <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary/20 to-blue-600/20 backdrop-blur-xl rounded-full border border-primary/30 shadow-2xl">
-                <Globe className="h-6 w-6 text-primary animate-spin-slow" />
-                <span className="text-base font-bold tracking-wide text-white">#1 Global Business Solutions</span>
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-8 py-2 sm:py-4 bg-gradient-to-r from-primary/20 to-blue-600/20 backdrop-blur-xl rounded-full border border-primary/30 shadow-2xl">
+                <Globe className="h-4 w-4 sm:h-6 sm:w-6 text-primary animate-spin-slow" />
+                <span className="text-sm sm:text-base font-bold tracking-wide text-white">
+                  #1 Global Business Solutions
+                </span>
               </div>
 
               {/* Enhanced TypewriterEffect Title */}
-              <div className="min-h-[140px] flex items-center justify-center lg:justify-start">
+              <div className="min-h-[100px] sm:min-h-[120px] lg:min-h-[140px] flex items-center justify-center lg:justify-start">
                 <div className="text-center lg:text-left">
-                  <TypewriterEffectSmooth words={words}  />
-                  <h2 className="text-2xl lg:text-3xl font-bold text-white/90 mt-4 tracking-wide">
+                  <TypewriterEffectSmooth words={words} />
+                  <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white/90 mt-2 sm:mt-4 tracking-wide">
                     With Cutting-Edge Innovation
                   </h2>
                 </div>
               </div>
 
               {/* Enhanced Description */}
-              <p className="text-xl lg:text-xl leading-relaxed max-w-2xl font-medium font-serif text-white/95 drop-shadow-2xl">
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl font-medium font-serif text-white/95 drop-shadow-2xl">
                 We deliver <span className="text-primary font-bold">game-changing solutions</span> that propel
                 businesses to unprecedented heights. Join industry leaders who trust us to{" "}
                 <span className="text-primary font-bold">revolutionize their success</span>.
               </p>
 
               {/* Enhanced Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-6 pt-4">
+              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 sm:gap-6 pt-2 sm:pt-4">
                 <Button
                   asChild
                   size="lg"
-                  className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white px-10 py-5 text-xl font-bold rounded-xl shadow-2xl hover:shadow-primary/25 transform hover:scale-110 transition-all duration-300 border border-primary/20"
+                  className="w-full sm:w-auto bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white px-6 sm:px-10 py-3 sm:py-5 text-base sm:text-xl font-bold rounded-xl shadow-2xl hover:shadow-primary/25 transform hover:scale-110 transition-all duration-300 border border-primary/20"
                 >
-                  <Link href="/contact" className="flex items-center gap-3">
+                  <Link href="/contact" className="flex items-center gap-2 sm:gap-3">
                     Start Your Transformation
-                    <ArrowRight className="h-6 w-6" />
+                    <ArrowRight className="h-4 w-4 sm:h-6 sm:w-6" />
                   </Link>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-2 border-white/80 text-white hover:bg-white hover:text-slate-900 backdrop-blur-sm px-10 py-5 text-xl font-bold bg-white/10 rounded-xl transform hover:scale-110 transition-all duration-300 shadow-xl"
+                  className="w-full sm:w-auto border-2 border-white/80 text-white hover:bg-white hover:text-slate-900 backdrop-blur-sm px-6 sm:px-10 py-3 sm:py-5 text-base sm:text-xl font-bold bg-white/10 rounded-xl transform hover:scale-110 transition-all duration-300 shadow-xl"
                 >
                   <Link href="/services">Explore Solutions</Link>
                 </Button>
@@ -115,20 +119,20 @@ export function HeroSection() {
             </div>
 
             {/* Right Column - Enhanced Stats Grid */}
-            <div className="lg:justify-self-end">
-              <div className="grid grid-cols-2 gap-6">
+            <div className="lg:justify-self-end mt-8 lg:mt-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 {stats.map((stat, index) => {
                   const IconComponent = stat.icon
                   return (
                     <div
                       key={index}
-                      className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl hover:shadow-primary/20 transform hover:scale-110 transition-all duration-300 hover:border-primary/40"
+                      className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-2xl hover:shadow-primary/20 transform hover:scale-110 transition-all duration-300 hover:border-primary/40"
                     >
-                      <div className="text-center space-y-4">
-                        <IconComponent className="h-10 w-10 text-primary mx-auto drop-shadow-lg" />
-                        <div className="text-4xl font-black text-white drop-shadow-lg">{stat.number}</div>
-                        <div className="text-base font-bold text-white/90">{stat.label}</div>
-                        <div className="w-16 h-1.5 bg-gradient-to-r from-primary to-blue-400 rounded-full mx-auto shadow-lg" />
+                      <div className="text-center space-y-2 sm:space-y-4">
+                        <IconComponent className="h-6 w-6 sm:h-10 sm:w-10 text-primary mx-auto drop-shadow-lg" />
+                        <div className="text-2xl sm:text-4xl font-black text-white drop-shadow-lg">{stat.number}</div>
+                        <div className="text-sm sm:text-base font-bold text-white/90">{stat.label}</div>
+                        <div className="w-12 sm:w-16 h-1 sm:h-1.5 bg-gradient-to-r from-primary to-blue-400 rounded-full mx-auto shadow-lg" />
                       </div>
                     </div>
                   )
