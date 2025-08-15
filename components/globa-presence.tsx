@@ -37,19 +37,18 @@ export default function GlobalPresenceSection() {
     {
       order: 1,
       startLat: -19.885592,
-      startLng: -43.951191,
+      startLng: -10.951191,
       endLat: -22.9068,
       endLng: -43.1729,
       arcAlt: 0.1,
       color: colors[Math.floor(Math.random() * (colors.length - 1))],
     },
-    // ... existing arcs data ...
-    {
+     {
       order: 14,
-      startLat: -33.936138,
+      startLat: -31.936138,
       startLng: 18.436529,
-      endLat: 21.395643,
-      endLng: 39.883798,
+      endLat: 91.395643,
+      endLng: 34.883798,
       arcAlt: 0.3,
       color: colors[Math.floor(Math.random() * (colors.length - 1))],
     },
