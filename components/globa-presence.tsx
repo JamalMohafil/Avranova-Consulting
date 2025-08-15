@@ -9,8 +9,7 @@ import { World } from "./ui/globe"
 
 export default function GlobalPresenceSection() {
   const { t, isRTL } = useI18n()
-  const { theme } = useTheme()
-  const globeConfig = {
+   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",
     showAtmosphere: true,
@@ -34,8 +33,7 @@ export default function GlobalPresenceSection() {
   }
   const colors = ["#06b6d4", "#3b82f6", "#6366f1"]
   const sampleArcs = [
-    // From Aleppo, Syria to international destinations
-    {
+     {
       order: 1,
       startLat: 36.2021,
       startLng: 37.1343,
@@ -50,7 +48,7 @@ export default function GlobalPresenceSection() {
       startLng: 37.1343,
       endLat: 40.7128, // New York, USA
       endLng: -74.006,
-      arcAlt: 0.5,
+      arcAlt: 0.2,
       color: colors[1],
     },
     {
@@ -204,12 +202,12 @@ export default function GlobalPresenceSection() {
 
           {/* Globe Side */}
           <div className={`${isRTL ? "lg:order-1" : ""}`}>
-            <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[700px] rounded-2xl bg-slate-900 border border-slate-700/50 backdrop-blur-sm overflow-hidden">
+            <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl bg-slate-900 border border-slate-700/50 backdrop-blur-sm overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15)_0%,transparent_70%)]" />
 
               {/* Globe Container */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0">
                 <World data={sampleArcs} globeConfig={globeConfig} />
               </div>
 
@@ -256,8 +254,7 @@ export const Globe = ({ className }: { className?: string }) => {
       markerColor: [0.1, 0.8, 1],
       glowColor: [1, 1, 1],
       markers: [
-        // longitude latitude
-        { location: [37.7595, -122.4367], size: 0.03 },
+         { location: [37.7595, -122.4367], size: 0.03 },
         { location: [40.7128, -74.006], size: 0.1 },
       ],
       onRender: (state) => {

@@ -8,21 +8,24 @@ import { SiteFooter } from "@/components/site-footer"
 import GlobalPresence from "@/components/globa-presence"
 import { SparklesCore } from "@/components/ui/sprakles"
 import { HeroSection } from "@/components/hero-section"
+import { Suspense } from "react"
 
 export default async  function HomePage() {
-    await new Promise((resolve) => setTimeout(resolve, 1000)) 
-
+ 
   return (
     <div className="flex min-h-screen flex-col">
        <main className="flex-1">
       
         <HeroSection />
+        <Suspense fallback={<p>Loading</p>}>
+
         <ServicesPreview />
         <GlobalPresence/>
         <AchievementsDisplay />
 
         <TestimonialsSection />
         <ContactForm />
+        </Suspense>
       </main>
      </div>
   )

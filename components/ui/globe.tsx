@@ -17,7 +17,7 @@ extend({ ThreeGlobe: ThreeGlobe });
 
 const RING_PROPAGATION_SPEED = 3;
 const aspect = 1.2;
-const cameraZ = 300;
+const cameraZ = 340;
 
 type Position = {
   order: number;
@@ -60,11 +60,10 @@ interface WorldProps {
   data: Position[];
 }
 
-let numbersOfRings = [0];
 
 export function Globe({ globeConfig, data }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null);
-  const groupRef = useRef();
+  const groupRef = useRef(null);
   const [isInitialized, setIsInitialized] = useState(false);
 
   const defaultProps = {
@@ -77,8 +76,8 @@ export function Globe({ globeConfig, data }: WorldProps) {
     emissive: "#000000",
     emissiveIntensity: 0.1,
     shininess: 0.9,
-    arcTime: 2000,
-    arcLength: 0.9,
+    arcTime: 1000,
+    arcLength: 0.8,
     rings: 1,
     maxRings: 3,
     ...globeConfig,
@@ -115,8 +114,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     globeConfig.shininess,
   ]);
 
-  // Build data when globe is initialized or when data changes
-  useEffect(() => {
+   useEffect(() => {
     if (!globeRef.current || !isInitialized || !data) return;
 
     const arcs = data;
@@ -128,6 +126,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         size: defaultProps.pointSize,
         order: arc.order,
         color: arc.color,
+        
         lat: arc.startLat,
         lng: arc.startLng,
       });
