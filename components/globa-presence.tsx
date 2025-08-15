@@ -2,13 +2,14 @@
 
 import { useI18n } from "@/lib/i18n"
 import { useTheme } from "next-themes"
+import createGlobe from "cobe"
+import { useEffect, useRef } from "react"
 import { PointerHighlight } from "./ui/pointer-highlight"
 import { World } from "./ui/globe"
 
 export default function GlobalPresenceSection() {
   const { t, isRTL } = useI18n()
   const { theme } = useTheme()
-
   const globeConfig = {
     pointSize: 4,
     globeColor: "#062056",
@@ -31,26 +32,81 @@ export default function GlobalPresenceSection() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   }
-
   const colors = ["#06b6d4", "#3b82f6", "#6366f1"]
   const sampleArcs = [
+    // From Aleppo, Syria to international destinations
     {
       order: 1,
-      startLat: -19.885592,
-      startLng: -10.951191,
-      endLat: -22.9068,
-      endLng: -43.1729,
-      arcAlt: 0.1,
-      color: colors[Math.floor(Math.random() * (colors.length - 1))],
-    },
-     {
-      order: 14,
-      startLat: -31.936138,
-      startLng: 18.436529,
-      endLat: 91.395643,
-      endLng: 34.883798,
+      startLat: 36.2021,
+      startLng: 37.1343,
+      endLat: 40.4168, // Madrid, Spain
+      endLng: -3.7038,
       arcAlt: 0.3,
-      color: colors[Math.floor(Math.random() * (colors.length - 1))],
+      color: colors[0],
+    },
+    {
+      order: 2,
+      startLat: 36.2021,
+      startLng: 37.1343,
+      endLat: 40.7128, // New York, USA
+      endLng: -74.006,
+      arcAlt: 0.5,
+      color: colors[1],
+    },
+    {
+      order: 3,
+      startLat: 36.2021,
+      startLng: 37.1343,
+      endLat: 48.8566, // Paris, France
+      endLng: 2.3522,
+      arcAlt: 0.2,
+      color: colors[2],
+    },
+    {
+      order: 4,
+      startLat: 36.2021,
+      startLng: 37.1343,
+      endLat: 39.9042, // Beijing, China
+      endLng: 116.4074,
+      arcAlt: 0.6,
+      color: colors[0],
+    },
+    // From Damascus, Syria to international destinations
+    {
+      order: 5,
+      startLat: 33.5138,
+      startLng: 36.2765,
+      endLat: 40.4168, // Madrid, Spain
+      endLng: -3.7038,
+      arcAlt: 0.4,
+      color: colors[1],
+    },
+    {
+      order: 6,
+      startLat: 33.5138,
+      startLng: 36.2765,
+      endLat: 40.7128, // New York, USA
+      endLng: -74.006,
+      arcAlt: 0.7,
+      color: colors[2],
+    },
+    {
+      order: 7,
+      startLat: 33.5138,
+      startLng: 36.2765,
+      endLat: 48.8566, // Paris, France
+      endLng: 2.3522,
+      arcAlt: 0.3,
+      color: colors[0],
+    },
+    {
+      order: 8,
+      startLat: 33.5138,
+      startLng: 36.2765,
+      endLat: 39.9042, // Beijing, China
+      endLng: 116.4074,
+      arcAlt: 0.5,
+      color: colors[1],
     },
   ]
 
@@ -71,6 +127,7 @@ export default function GlobalPresenceSection() {
                 {t("growing_strong")}
               </div>
 
+              {/* Updated responsive text layout */}
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                 {isRTL ? (
                   <div className="space-y-2">
@@ -93,7 +150,7 @@ export default function GlobalPresenceSection() {
                 )}
               </h2>
 
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 {isRTL
                   ? "نخدم عملاءنا في جميع أنحاء العالم بخبرة محلية وجودة عالمية. شبكتنا الواسعة تضمن تقديم حلول مبتكرة ومتخصصة لكل مشروع."
                   : "Serving clients worldwide with local expertise and global quality. Our extensive network ensures innovative and specialized solutions for every project."}
@@ -103,42 +160,42 @@ export default function GlobalPresenceSection() {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-2">
-                <div className="text-2xl sm:text-3xl font-bold text-primary">50+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground font-medium">{t("countriesServed")}</div>
+                <div className="text-3xl font-bold text-primary">50+</div>
+                <div className="text-sm text-muted-foreground font-medium">{t("countriesServed")}</div>
               </div>
               <div className="space-y-2">
-                <div className="text-2xl sm:text-3xl font-bold text-primary">1000+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground font-medium">{t("projectsCompleted")}</div>
+                <div className="text-3xl font-bold text-primary">1000+</div>
+                <div className="text-sm text-muted-foreground font-medium">{t("projectsCompleted")}</div>
               </div>
               <div className="space-y-2">
-                <div className="text-2xl sm:text-3xl font-bold text-primary">24/7</div>
-                <div className="text-xs sm:text-sm text-muted-foreground font-medium">
+                <div className="text-3xl font-bold text-primary">24/7</div>
+                <div className="text-sm text-muted-foreground font-medium">
                   {isRTL ? "دعم عالمي" : "Global Support"}
                 </div>
               </div>
               <div className="space-y-2">
-                <div className="text-2xl sm:text-3xl font-bold text-primary">99%</div>
-                <div className="text-xs sm:text-sm text-muted-foreground font-medium">{t("successRate")}</div>
+                <div className="text-3xl font-bold text-primary">99%</div>
+                <div className="text-sm text-muted-foreground font-medium">{t("successRate")}</div>
               </div>
             </div>
 
             {/* Key Features */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                <span className="text-sm sm:text-base text-foreground font-medium">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-foreground font-medium">
                   {isRTL ? "خبرة محلية في كل منطقة" : "Local expertise in every region"}
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                <span className="text-sm sm:text-base text-foreground font-medium">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-foreground font-medium">
                   {isRTL ? "معايير جودة عالمية موحدة" : "Unified global quality standards"}
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                <span className="text-sm sm:text-base text-foreground font-medium">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-foreground font-medium">
                   {isRTL ? "دعم متعدد اللغات والثقافات" : "Multi-language and cultural support"}
                 </span>
               </div>
@@ -147,7 +204,7 @@ export default function GlobalPresenceSection() {
 
           {/* Globe Side */}
           <div className={`${isRTL ? "lg:order-1" : ""}`}>
-            <div className="relative w-full h-[700px] rounded-2xl bg-slate-900 border border-slate-700/50 backdrop-blur-sm overflow-hidden">
+            <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[700px] rounded-2xl bg-slate-900 border border-slate-700/50 backdrop-blur-sm overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15)_0%,transparent_70%)]" />
 
@@ -156,18 +213,17 @@ export default function GlobalPresenceSection() {
                 <World data={sampleArcs} globeConfig={globeConfig} />
               </div>
 
-              {/* Status Indicators */}
-              <div className="absolute top-6 left-6 bg-slate-800/90 backdrop-blur-sm rounded-lg p-3 border border-purple-500/30">
-                <div className="flex items-center gap-2 text-sm">
-                  <div className="w-3 h-3 rounded-full bg-purple-400 animate-pulse" />
+              <div className="absolute top-3 left-3 sm:top-6 sm:left-6 bg-slate-800/90 backdrop-blur-sm rounded-lg p-2 sm:p-3 border border-purple-500/30">
+                <div className="flex items-center gap-2 text-xs sm:text-sm">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-purple-400 animate-pulse" />
                   <span className="text-purple-100 font-medium">{isRTL ? "اتصالات نشطة" : "Active Connections"}</span>
                 </div>
               </div>
 
-              <div className="absolute bottom-6 right-6 bg-slate-800/90 backdrop-blur-sm rounded-lg p-3 border border-purple-500/30">
-                <div className="flex items-center gap-2 text-sm">
+              <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 bg-slate-800/90 backdrop-blur-sm rounded-lg p-2 sm:p-3 border border-purple-500/30">
+                <div className="flex items-center gap-2 text-xs sm:text-sm">
                   <div className="w-2 h-2 rounded-full bg-green-400" />
-                  <span className="text-purple-100 font-medium">50+ {isRTL ? "دولة" : "Countries"}</span>
+                  <span className="text-purple-100 font-medium">8 {isRTL ? "اتصالات" : "Connections"}</span>
                 </div>
               </div>
             </div>
@@ -175,5 +231,51 @@ export default function GlobalPresenceSection() {
         </div>
       </div>
     </section>
+  )
+}
+
+export const Globe = ({ className }: { className?: string }) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    let phi = 0
+
+    if (!canvasRef.current) return
+
+    const globe = createGlobe(canvasRef.current, {
+      devicePixelRatio: 2,
+      width: 600 * 2,
+      height: 600 * 2,
+      phi: 0,
+      theta: 0,
+      dark: 1,
+      diffuse: 1.2,
+      mapSamples: 16000,
+      mapBrightness: 6,
+      baseColor: [0.3, 0.3, 0.3],
+      markerColor: [0.1, 0.8, 1],
+      glowColor: [1, 1, 1],
+      markers: [
+        // longitude latitude
+        { location: [37.7595, -122.4367], size: 0.03 },
+        { location: [40.7128, -74.006], size: 0.1 },
+      ],
+      onRender: (state) => {
+        state.phi = phi
+        phi += 0.01
+      },
+    })
+
+    return () => {
+      globe.destroy()
+    }
+  }, [])
+
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
+      className={className}
+    />
   )
 }
