@@ -15,10 +15,10 @@ export function HeroSection() {
   }, [])
 
   const words = [
-    { text: "Transform", className: "text-white" },
-    { text: "Your", className: "text-white" },
-    { text: "Business", className: "text-primary dark:text-primary  " },
-    { text: "Future", className: "text-primary dark:text-primary " },
+    { text: "Transform", className: "text-white  lg:text-5xl md:text-4xl text-2xl" },
+    { text: "Your", className: "text-white  lg:text-5xl md:text-4xl text-2xl" },
+    { text: "Business", className: "text-primary dark:text-primary   lg:text-5xl md:text-4xl text-2xl" },
+    { text: "Future", className: "text-primary dark:text-primary lg:text-5xl md:text-4xl text-2xl" },
   ]
 
   const stats = [
@@ -32,7 +32,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative w-full h-[70vh] sm:h-[80vh] lg:h-[90vh] py-12 sm:py-20 lg:py-60 flex justify-center items-center
+      className="relative w-full h-[78vh]  sm:h-[80vh] lg:h-[90vh] pb-12 sm:py-20 lg:py-60 flex justify-center items-center
      min-h-[500px] overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900"
     >
       {/* Dynamic Background Pattern */}
@@ -81,7 +81,7 @@ export function HeroSection() {
               {/* Enhanced TypewriterEffect Title */}
               <div className="min-h-[100px] sm:min-h-[120px] lg:min-h-[140px] flex items-center justify-center lg:justify-start">
                 <div className="text-center lg:text-left">
-                  <TypewriterEffectSmooth words={words} />
+                  <TypewriterEffectSmooth words={words}  />
                   <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white/90 mt-2 sm:mt-4 tracking-wide">
                     With Cutting-Edge Innovation
                   </h2>
@@ -100,7 +100,7 @@ export function HeroSection() {
                 <Button
                   asChild
                   size="lg"
-                  className="w-full sm:w-auto bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white px-6 sm:px-10 py-3 sm:py-5 text-base sm:text-xl font-bold rounded-xl shadow-2xl hover:shadow-primary/25 transform hover:scale-110 transition-all duration-300 border border-primary/20"
+                  className="w-full sm:w-auto max-sm:w-[80%] bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white px-6 sm:px-10 py-3 sm:py-5 text-base sm:text-xl font-bold rounded-xl shadow-2xl hover:shadow-primary/25 transform hover:scale-110 transition-all duration-300 border border-primary/20"
                 >
                   <Link href="/contact" className="flex items-center gap-2 sm:gap-3">
                     Start Your Transformation
@@ -111,7 +111,13 @@ export function HeroSection() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto border-2 border-white/80 text-white hover:bg-white hover:text-slate-900 backdrop-blur-sm px-6 sm:px-10 py-3 sm:py-5 text-base sm:text-xl font-bold bg-white/10 rounded-xl transform hover:scale-110 transition-all duration-300 shadow-xl"
+                  className="w-full sm:w-auto  max-sm:w-[70%] max-sm:hover:scale-105
+                   border-2 border-white/80 text-white
+                    hover:bg-white hover:text-slate-900
+                     backdrop-blur-sm px-6 sm:px-10 py-3 sm:py-5
+                      text-base sm:text-xl font-bold bg-white/10 
+                      rounded-xl transform hover:scale-110 transition-all
+                       duration-300 shadow-xl"
                 >
                   <Link href="/services">Explore Solutions</Link>
                 </Button>
@@ -119,7 +125,7 @@ export function HeroSection() {
             </div>
 
             {/* Right Column - Enhanced Stats Grid */}
-            <div className="lg:justify-self-end mt-8 lg:mt-0">
+            <div className="max-md:hidden lg:justify-self-end mt-8 lg:mt-0">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 {stats.map((stat, index) => {
                   const IconComponent = stat.icon
