@@ -178,7 +178,7 @@ export default function CaseStudiesPagePreview() {
           <div className="container relative mx-auto px-4">
             <div className="mx-auto max-w-4xl text-center">
               <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
-                {isRTL ? "دراسات الحالة" : "Case Studies"}
+                {isRTL ? "الدراسات" : "Case Studies"}
               </h1>
               <p className="mb-8 text-xl text-white/90 md:text-2xl">
                 {isRTL

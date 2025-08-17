@@ -226,7 +226,8 @@ const translations: Translations = {
   },
   caseStudies: {
     en: "Case Studies",
-    ar: "دراسات الحالة",
+    ar:
+    "الدراسات",
   },
   contact: {
     en: "Contact",
@@ -374,7 +375,7 @@ const translations: Translations = {
   },
   featured_case_studies: {
     en: "Featured Case Studies",
-    ar: "دراسات الحالة المميزة",
+    ar: "الدراسات المميزة",
   },
   case_studies_desc: {
     en: "Discover how we've helped clients achieve exceptional results across diverse industries",
@@ -382,7 +383,7 @@ const translations: Translations = {
   },
   view_all_case_studies: {
     en: "View All Case Studies",
-    ar: "عرض جميع دراسات الحالة",
+    ar: "عرض جميع الدراسات",
   },
   followUs: {
     en: "Follow Us",
@@ -435,6 +436,34 @@ const translations: Translations = {
   accessibility: {
     en: "Accessibility",
     ar: "إمكانية الوصول",
+  },
+  trusted_partners: {
+    en: "Trusted Technology Partners",
+    ar: "شركاء التكنولوجيا الموثوقون",
+  },
+  powering_innovation: {
+    en: "Powering Innovation",
+    ar: "تعزيز الابتكار",
+  },
+  together: {
+    en: "Together",
+    ar: "معاً",
+  },
+  partners_description: {
+    en: "We collaborate with industry-leading technology providers to deliver cutting-edge solutions.",
+    ar: "نتعاون مع مقدمي التكنولوجيا الرائدين في الصناعة لتقديم حلول متطورة.",
+  },
+  ready_to_partner: {
+    en: "Ready to Partner With Us?",
+    ar: "هل أنت مستعد للشراكة معنا؟",
+  },
+  partner_cta_description: {
+    en: "Join our network of technology partners and help us deliver exceptional solutions.",
+    ar: "انضم إلى شبكة شركائنا التقنيين وساعدنا في تقديم حلول استثنائية.",
+  },
+  become_partner: {
+    en: "Become a Partner",
+    ar: "كن شريكاً",
   },
 }
 

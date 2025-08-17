@@ -9,6 +9,7 @@ import GlobalPresence from "@/components/globa-presence"
 import { SparklesCore } from "@/components/ui/sprakles"
 import { HeroSection } from "@/components/hero-section"
 import { Suspense } from "react"
+import { PartnersSection } from "@/components/partners-section"
 
 export default async  function HomePage() {
  
@@ -22,6 +23,7 @@ export default async  function HomePage() {
         <ServicesPreview />
         <GlobalPresence/>
         <AchievementsDisplay />
+              <PartnersSection />
 
         <TestimonialsSection />
         <ContactForm />
