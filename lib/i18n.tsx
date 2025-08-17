@@ -226,8 +226,7 @@ const translations: Translations = {
   },
   caseStudies: {
     en: "Case Studies",
-    ar:
-    "الدراسات",
+    ar: "دراسات الحالة",
   },
   contact: {
     en: "Contact",
@@ -311,7 +310,7 @@ const translations: Translations = {
   },
   testimonial3_text: {
     en: "Their MEP integration expertise resulted in a LEED Platinum certification and 40% energy savings. Truly exceptional sustainable design solutions.",
-    ar: "خبرتهم في تكامل الأنظمة الهندسية أدت إلى حصولنا على شهادة LEED البلاتينية وتوفير 40% من الطاقة. حلول تصميم مستدام استثنائية حقاً.",
+    ar: "خبرتهم في تكامل الأنظمة الهندسية أدت إلى حصولنا على شهادة LEED البلاتيني�� وتوفير 40% من الطاقة. حلول تصميم مستدام استثنائية حقاً.",
   },
   testimonial3_role: {
     en: "Sustainability Director",
@@ -375,7 +374,7 @@ const translations: Translations = {
   },
   featured_case_studies: {
     en: "Featured Case Studies",
-    ar: "الدراسات المميزة",
+    ar: "دراسات الحالة المميزة",
   },
   case_studies_desc: {
     en: "Discover how we've helped clients achieve exceptional results across diverse industries",
@@ -383,7 +382,7 @@ const translations: Translations = {
   },
   view_all_case_studies: {
     en: "View All Case Studies",
-    ar: "عرض جميع الدراسات",
+    ar: "عرض جميع دراسات الحالة",
   },
   followUs: {
     en: "Follow Us",
