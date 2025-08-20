@@ -1,5 +1,4 @@
 "use client"
-
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -10,6 +9,7 @@ import { useI18n } from "@/lib/i18n"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Logo from "@/public/logo-2.png"
+
 export function SiteHeader() {
   const { t, isRTL } = useI18n()
   const pathname = usePathname()
@@ -33,10 +33,13 @@ export function SiteHeader() {
     { href: "/contact", label: t("contact") },
   ]
 
+  // ترتيب الروابط حسب اللغة - في العربية نعكس الترتيب
+  const orderedNavLinks = isRTL ? [...navLinks].reverse() : navLinks
+
   return (
     <>
-      <div className="bg-gradient-to-r from-primary to-secondary text-white py-3 text-sm">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-r from-primary to-secondary text-white py-0 text-sm">
+        <div className="container mx-auto px-4 sm:px-6 xl:px-8">
           <div className={`flex items-center ${isRTL ? "justify-between flex-row-reverse" : "justify-between"}`}>
             <div className={`flex items-center gap-6 ${isRTL ? "flex-row-reverse" : ""}`}>
               <div className={`flex items-center gap-2 ${isRTL ? "flex-row-reverse" : ""}`}>
@@ -48,14 +51,13 @@ export function SiteHeader() {
                 <span className="text-white/90">info@avranova.com</span>
               </div>
             </div>
-            <div className={`hidden md:flex items-center gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
+            <div className={`hidden min-[1280px]:flex items-center gap-4 ${isRTL ? "flex-row-reverse" : ""}`}>
               <LanguageSwitcher />
               <ThemeToggle />
             </div>
           </div>
         </div>
       </div>
-
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           isScrolled
@@ -63,7 +65,7 @@ export function SiteHeader() {
             : "bg-background/90 backdrop-blur-sm"
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 xl:px-8">
           <div className={`flex items-center h-20 ${isRTL ? "justify-between flex-row-reverse" : "justify-between"}`}>
              <Link
               href="/"
@@ -74,15 +76,15 @@ export function SiteHeader() {
               </div>
               <div className={`flex flex-col ${isRTL ? "items-end" : "items-start"}`}>
                 <span className="font-serif font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                  {t("companyName")}
+               Avranova Consulting
                 </span>
-                <span className="text-sm text-muted-foreground">{t("tagline")}</span>
+                <span className="text-sm text-muted-foreground font-sans">Precision, Creativity, Collaboration
+</span>
               </div>
             </Link>
-
-            {/* Navigation - centered */}
-            <nav className={`hidden lg:flex items-center gap-8 ${isRTL ? "flex-row-reverse order-2" : "order-2"}`}>
-              {navLinks.map((link) => (
+            {/* Navigation - مع ترتيب الروابط حسب اللغة */}
+            <nav className={`hidden min-[1280px]:flex items-center gap-8 ${isRTL ? "flex-row-reverse order-2" : "order-2"}`}>
+              {orderedNavLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -99,9 +101,8 @@ export function SiteHeader() {
                 </Link>
               ))}
             </nav>
-
             {/* CTA Button - positioned correctly for RTL */}
-            <div className={`hidden lg:flex items-center ${isRTL ? "flex-row-reverse order-3" : "order-3"}`}>
+            <div className={`hidden min-[1280px]:flex items-center ${isRTL ? "flex-row-reverse order-3" : "order-3"}`}>
               <Button
                 asChild
                 className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-3"
@@ -109,21 +110,20 @@ export function SiteHeader() {
                 <Link href="/contact">{t("getConsultation")}</Link>
               </Button>
             </div>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`lg:hidden p-2 rounded-lg bg-muted text-foreground hover:bg-muted/80 transition-colors ${isRTL ? "order-1" : "order-4"}`}
+              className={`min-[1280px]:hidden p-2 rounded-lg bg-muted text-foreground hover:bg-muted/80 transition-colors ${isRTL ? "order-1" : "order-4"}`}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
-
+          {/* Mobile Menu - مع ترتيب الروابط حسب اللغة */}
           {isMenuOpen && (
-            <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-lg">
+            <div className="min-[1280px]:hidden border-t border-border bg-background/95 backdrop-blur-lg">
               <div className={`px-4 py-6 space-y-4 ${isRTL ? "text-right" : "text-left"}`}>
-                {navLinks.map((link) => (
+                {orderedNavLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
@@ -136,7 +136,7 @@ export function SiteHeader() {
                   </Link>
                 ))}
                 <div
-                  className={`pt-4 border-t border-border flex gap-4 md:hidden ${isRTL ? "flex-row-reverse justify-end" : "justify-start"}`}
+                  className={`pt-4 border-t border-border flex gap-4 min-[1280px]:hidden ${isRTL ? "flex-row-reverse justify-end" : "justify-start"}`}
                 >
                   <LanguageSwitcher />
                   <ThemeToggle />

@@ -19,7 +19,7 @@ function LayoutClient({
   },[])
   if(loading) return <Loading/>
   return (
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="light">
 
     <I18nProvider>
          <SiteHeader/>

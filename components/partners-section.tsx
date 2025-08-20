@@ -96,12 +96,10 @@ export function PartnersSection() {
               <div
                 className={`flex flex-col sm:flex-row gap-4 justify-center items-center ${isRTL ? "sm:flex-row-reverse" : ""}`}
               >
-                <button className="bg-background text-foreground px-8 py-4 rounded-xl font-semibold hover:bg-muted transition-all duration-300 hover:scale-105 shadow-lg">
+                <button className="bg-background text-foreground px-16 cursor-pointer py-4 rounded-xl font-semibold hover:bg-muted transition-all duration-300 hover:scale-105 shadow-lg">
                   {t("become_partner")}
                 </button>
-                <button className="border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:bg-primary-foreground/10 transition-all duration-300">
-                  {t("learnMore")}
-                </button>
+            
               </div>
             </div>
           </div>

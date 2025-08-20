@@ -42,11 +42,11 @@
 
 .dark {
   /* Improved dark mode - less dark, more comfortable */
-  --background: oklch(0.12 0.01 240); /* Much lighter dark background */
+  --background: oklch(17.249% 0.02691 246.199); /* Much lighter dark background */
   --foreground: oklch(0.95 0.005 240); /* Softer white text */
-  --card: oklch(0.15 0.01 240); /* Lighter dark cards */
+  --card: oklch(25.114% 0.06403 249.768); /* Lighter dark cards */
   --card-foreground: oklch(0.95 0.005 240);
-  --popover: oklch(0.12 0.01 240);
+  --popover: oklch(17.337% 0.02596 248.832);
   --popover-foreground: oklch(0.95 0.005 240);
   --primary: oklch(0.7 0.15 240); /* Brighter primary in dark mode */
   --primary-foreground: oklch(0.12 0.01 240);

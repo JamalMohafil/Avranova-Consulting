@@ -43,8 +43,9 @@ export function PointerHighlight({
 
   return (
     <div
-      className={cn("relative w-fit", containerClassName)}
+      className={cn("relative w-fit ", containerClassName)}
       ref={containerRef}
+      dir="ltr"
     >
       {children}
       {dimensions.width > 0 && dimensions.height > 0 && (

@@ -107,11 +107,23 @@ export function SiteFooter() {
         <div className="py-16">
           <div className={`grid gap-12 lg:grid-cols-5 ${isRTL ? "text-right" : ""}`}>
             {/* Company Info - Takes 2 columns */}
-            <div className="lg:col-span-2">
+            <div className={`lg:col-span-2 ${isRTL ? " flex flex-col items-center justify-start" : ""}`}>
               <Link
                 href="/"
                 className={`inline-flex items-center space-x-4 mb-8 group ${isRTL ? "flex-row-reverse space-x-reverse" : ""}`}
               >
+               {isRTL ? (<>
+             
+                <div className={`flex flex-col items-start`}>
+                  <span className="font-serif font-bold text-2xl text-right text-white leading-tight">{t("companyName")}</span>
+                  <span className="text-white/70 text-sm text-right mt-1">{t("tagline")}</span>
+                </div>
+                   <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/10 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative w-16 h-16 bg-gradient-to-br from-white/20 to-white/10 rounded-3xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-all duration-300 border border-white/20">
+                    <Building2 className="h-8 w-8 text-white" />
+                  </div>
+                </div></>) : (<>
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/10 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative w-16 h-16 bg-gradient-to-br from-white/20 to-white/10 rounded-3xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-all duration-300 border border-white/20">
@@ -121,7 +133,7 @@ export function SiteFooter() {
                 <div className={`flex flex-col ${isRTL ? "items-end" : ""}`}>
                   <span className="font-serif font-bold text-2xl text-white leading-tight">{t("companyName")}</span>
                   <span className="text-white/70 text-sm mt-1">{t("tagline")}</span>
-                </div>
+                </div></>)}
               </Link>
 
               <p className="text-white/80 mb-8 leading-relaxed text-sm max-w-md">
@@ -129,24 +141,51 @@ export function SiteFooter() {
               </p>
 
               {/* Contact Info */}
-              <div className="space-y-4 mb-8">
-                <div className={`flex items-center gap-4 text-white/90 ${isRTL ? "flex-row-reverse" : ""}`}>
+              <div className="space-y-4 mb-8 flex flex-col justify-start items-start ">
+                <div className={`flex items-center gap-4 text-white/90 ${isRTL ? "  justify-center" : ""}`}>
+                 {isRTL ? (<>
+                                   <span className="font-medium">{t("phoneValue")}</span>
                   <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                     <Phone className="h-5 w-5 text-white" />
                   </div>
-                  <span className="font-medium">{t("phoneValue")}</span>
-                </div>
-                <div className={`flex items-center gap-4 text-white/90 ${isRTL ? "flex-row-reverse" : ""}`}>
+
+                 </>) : (<>
                   <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <Phone className="h-5 w-5 text-white" />
+                  </div>
+                                   <span className="font-medium">{t("phoneValue")}</span>
+
+                 </>)}
+                </div>
+                <div className={`flex items-center gap-4 text-white/90  ${isRTL ? "  justify-center" : ""} `}>
+              {isRTL ? (<>
+              
+           
+                  <span className="font-medium">{t("emailValue")}</span>
+                        <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <Mail className="h-5 w-5 text-white" />
+                  </div></>) : (<>
+              
+                 <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                     <Mail className="h-5 w-5 text-white" />
                   </div>
                   <span className="font-medium">{t("emailValue")}</span>
+              </>)} 
                 </div>
-                <div className={`flex items-center gap-4 text-white/90 ${isRTL ? "flex-row-reverse" : ""}`}>
+                <div className={`flex items-center gap-4 text-white/90 ${isRTL ? " justify-center" : ""}  `}>
+                 {isRTL ? (
+<>
+
+              
+                  <span className="font-medium">{t("addressValue")}</span>     <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                    <MapPin className="h-5 w-5 text-white" />
+                  </div></>
+                 ):(<>
+                 
                   <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                     <MapPin className="h-5 w-5 text-white" />
                   </div>
-                  <span className="font-medium">{t("addressValue")}</span>
+                  <span className="font-medium">{t("addressValue")}</span></>)}
                 </div>
               </div>
 
@@ -165,17 +204,25 @@ export function SiteFooter() {
 
             {/* Services */}
             <div>
-              <h3 className="font-serif font-bold text-xl mb-6 text-white">{t("services")}</h3>
+              <h3 className={`font-serif font-bold text-xl mb-6 text-white ${isRTL ? "flex justify-start " : ""}`}>{t("services")}</h3>
               <ul className="space-y-4">
                 {footerLinks.services.map((link, index) => (
                   <li key={index}>
-                    <Link
+                   {
+                    isRTL ? (<> <Link
+                      href={link.href}
+                      className={`text-white/80 hover:text-white transition-all duration-300 flex items-center gap-3 group ${isRTL ? "justify-start" : ""}`}
+                    >
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">{link.label}</span>
+                      <div className="w-2 h-2 bg-white/60 rounded-full group-hover:bg-white transition-colors"></div>
+                    </Link></>) : (<> <Link
                       href={link.href}
                       className={`text-white/80 hover:text-white transition-all duration-300 flex items-center gap-3 group ${isRTL ? "flex-row-reverse" : ""}`}
                     >
                       <div className="w-2 h-2 bg-white/60 rounded-full group-hover:bg-white transition-colors"></div>
                       <span className="group-hover:translate-x-1 transition-transform duration-300">{link.label}</span>
-                    </Link>
+                    </Link></>)
+                   }
                   </li>
                 ))}
               </ul>
@@ -183,17 +230,26 @@ export function SiteFooter() {
 
             {/* Company */}
             <div>
-              <h3 className="font-serif font-bold text-xl mb-6 text-white">{t("company")}</h3>
+              <h3  className={`font-serif font-bold text-xl mb-6 text-white ${isRTL ? "flex justify-start " : ""}`}>{t("company")}</h3>
               <ul className="space-y-4">
                 {footerLinks.company.map((link, index) => (
                   <li key={index}>
-                    <Link
+                  
+                        {
+                    isRTL ? (<> <Link
+                      href={link.href}
+                      className={`text-white/80 hover:text-white transition-all duration-300 flex items-center gap-3 group ${isRTL ? "justify-start" : ""}`}
+                    >
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">{link.label}</span>
+                      <div className="w-2 h-2 bg-white/60 rounded-full group-hover:bg-white transition-colors"></div>
+                    </Link></>) : (<> <Link
                       href={link.href}
                       className={`text-white/80 hover:text-white transition-all duration-300 flex items-center gap-3 group ${isRTL ? "flex-row-reverse" : ""}`}
                     >
                       <div className="w-2 h-2 bg-white/60 rounded-full group-hover:bg-white transition-colors"></div>
                       <span className="group-hover:translate-x-1 transition-transform duration-300">{link.label}</span>
-                    </Link>
+                    </Link></>)
+                   }
                   </li>
                 ))}
               </ul>
@@ -201,23 +257,31 @@ export function SiteFooter() {
 
             {/* Resources & Social */}
             <div>
-              <h3 className="font-serif font-bold text-xl mb-6 text-white">{t("resources")}</h3>
+              <h3  className={`font-serif font-bold text-xl mb-6 text-white ${isRTL ? "flex justify-start " : ""}`}>{t("resources")}</h3>
               <ul className="space-y-4 mb-8">
                 {footerLinks.resources.map((link, index) => (
                   <li key={index}>
-                    <Link
+                     {
+                    isRTL ? (<> <Link
+                      href={link.href}
+                      className={`text-white/80 hover:text-white transition-all duration-300 flex items-center gap-3 group ${isRTL ? "justify-start" : ""}`}
+                    >
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">{link.label}</span>
+                      <div className="w-2 h-2 bg-white/60 rounded-full group-hover:bg-white transition-colors"></div>
+                    </Link></>) : (<> <Link
                       href={link.href}
                       className={`text-white/80 hover:text-white transition-all duration-300 flex items-center gap-3 group ${isRTL ? "flex-row-reverse" : ""}`}
                     >
                       <div className="w-2 h-2 bg-white/60 rounded-full group-hover:bg-white transition-colors"></div>
                       <span className="group-hover:translate-x-1 transition-transform duration-300">{link.label}</span>
-                    </Link>
+                    </Link></>)
+                   }
                   </li>
                 ))}
               </ul>
 
-              <h4 className="font-semibold mb-4 text-white text-lg">{t("followUs")}</h4>
-              <div className={`flex gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
+              <h4  className={`font-serif font-bold text-xl mb-6 text-white ${isRTL ? "flex justify-start " : ""}`}>{t("followUs")}</h4>
+              <div className={`flex gap-3 ${isRTL ? " justify-start" : ""}`}>
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon
                   return (
@@ -240,6 +304,22 @@ export function SiteFooter() {
           <div
             className={`flex flex-col lg:flex-row items-center justify-between gap-6 ${isRTL ? "lg:flex-row-reverse" : ""}`}
           >
+           {isRTL ? (<>
+         
+
+            <div className={`flex items-center flex-wrap gap-6 text-white/70 ${isRTL ? "flex-row-reverse" : ""}`}>
+              {footerLinks.legal.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className="hover:text-white transition-colors duration-300 hover:scale-105 transform text-sm font-medium"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>   <div className={`flex items-center gap-2 text-white/80 rtl ${isRTL ? "flex-row" : ""}`}>
+              <span className="font-medium">{t("copyright")}</span>
+            </div></>) : (<>
             <div className={`flex items-center gap-2 text-white/80 ${isRTL ? "flex-row" : ""}`}>
               <span className="font-medium">{t("copyright")}</span>
             </div>
@@ -254,7 +334,7 @@ export function SiteFooter() {
                   {link.label}
                 </Link>
               ))}
-            </div>
+            </div></>)}
           </div>
         </div>
       </div>

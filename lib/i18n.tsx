@@ -96,6 +96,46 @@ const translations: Translations = {
     en: "Syria, Damascus, Al-Zahraa ",
     ar: "سوريا، دامشق، الزهراء ",
   },
+  hero_title_line1: {
+    en: "We Are BIM Experts",
+    ar: "نحن خبراء نمذجة معلومات البناء",
+  },
+  hero_title_line2: {
+    en: "providing tailored consultancy and solutions in Architecture, Structure, MEP, and Civil projects that optimize your work with innovation, efficiency, and reliable results",
+    ar: "نقدم استشارات وحلول مخصصة في مشاريع العمارة والإنشاءات والأنظمة الميكانيكية والكهربائية والمدنية التي تحسن عملك بالابتكار والكفاءة والنتائج الموثوقة",
+  },
+  transform_business: {
+    en: "Transform Your Business Future",
+    ar: "حول مستقبل أعمالك",
+  },
+  global_business_solutions: {
+    en: "#1 Global Business Solutions",
+    ar: "#1 حلول الأعمال العالمية",
+  },
+  start_transformation: {
+    en: "Start Your Transformation",
+    ar: "ابدأ تحولك",
+  },
+  explore_solutions: {
+    en: "Explore Solutions",
+    ar: "استكشف الحلول",
+  },
+  global_clients: {
+    en: "Global Clients",
+    ar: "عملاء عالميون",
+  },
+  success_rate: {
+    en: "Success Rate",
+    ar: "معدل النجاح",
+  },
+  years_leading: {
+    en: "Years Leading",
+    ar: "سنوات من الريادة",
+  },
+  awards_won: {
+    en: "Awards Won",
+    ar: "جوائز محققة",
+  },
   workingHours: {
     en: "Working Hours",
     ar: "ساعات العمل",
@@ -114,7 +154,7 @@ const translations: Translations = {
   },
   countriesServed: {
     en: "Countries Served",
-    ar: "الدول المتوفرة",
+    ar: "الدول الذي تم خدمتها",
   },
   photorealistic_renders: {
     en: "Photorealistic Renders",
@@ -238,7 +278,7 @@ const translations: Translations = {
   },
   copyright: {
     en: "© 2025 Avranova Consulting. All rights reserved.",
-    ar: "© 2025 أفرانوفا للاستشارات الهندسية. جميع الحقوق محفوظة.",
+    ar: "© 2025 جميع الحقوق محفوظة, افرانوفا للخدمات الاستشارية",
   },
   readyToStart: {
     en: "Ready to Start Your Project?",
@@ -278,7 +318,7 @@ const translations: Translations = {
   },
   whatClientsSay: {
     en: "What Our Clients Say",
-    ar: "آراء عملائنا الكرام",
+    ar: "آراء عملائنا ",
   },
   client_success_stories: {
     en: "Client Success Stories",
@@ -286,11 +326,11 @@ const translations: Translations = {
   },
   what_clients_say: {
     en: "What Our Clients Say",
-    ar: "آراء عملائنا الكرام",
+    ar: "آراء عملائنا ",
   },
   client_testimonials_desc: {
     en: "Hear from industry leaders who have experienced the difference our expertise makes",
-    ar: "استمع إلى قادة الصناعة الذين جربوا الفرق الذي تحدثه خبرتنا",
+    ar: "استمع إلى قادة الصناعة الذين جربوا وطبقوا الاستشارات الذي قمنا بتخطيطها لهم",
   },
   testimonial1_text: {
     en: "The team's expertise in BIM coordination saved us months of construction time and prevented costly conflicts. Their attention to detail is unmatched.",
@@ -310,7 +350,7 @@ const translations: Translations = {
   },
   testimonial3_text: {
     en: "Their MEP integration expertise resulted in a LEED Platinum certification and 40% energy savings. Truly exceptional sustainable design solutions.",
-    ar: "خبرتهم في تكامل الأنظمة الهندسية أدت إلى حصولنا على شهادة LEED البلاتيني�� وتوفير 40% من الطاقة. حلول تصميم مستدام استثنائية حقاً.",
+    ar: "خبرتهم في تكامل الأنظمة الهندسية أدت إلى حصولنا على شهادة LEED البلاتيني وتوفير 40% من الطاقة. حلول تصميم مستدام استثنائية حقاً.",
   },
   testimonial3_role: {
     en: "Sustainability Director",
@@ -334,7 +374,7 @@ const translations: Translations = {
   },
   proven_excellence: {
     en: "Proven Excellence",
-    ar: "التميز المثبت",
+    ar: "التميز العالمي",
   },
   excellence_description: {
     en: "Numbers that reflect our commitment to delivering exceptional results for every client",
@@ -351,10 +391,6 @@ const translations: Translations = {
   years_excellence: {
     en: "Years of Excellence",
     ar: "سنوات من التميز",
-  },
-  success_rate: {
-    en: "Success Rate",
-    ar: "معدل النجاح",
   },
   trusted_organizations: {
     en: "Trusted by leading organizations",
@@ -442,11 +478,11 @@ const translations: Translations = {
   },
   powering_innovation: {
     en: "Powering Innovation",
-    ar: "تعزيز الابتكار",
+    ar: "عزز الابتكار",
   },
   together: {
     en: "Together",
-    ar: "معاً",
+    ar: "معنا",
   },
   partners_description: {
     en: "We collaborate with industry-leading technology providers to deliver cutting-edge solutions.",
@@ -464,6 +500,26 @@ const translations: Translations = {
     en: "Become a Partner",
     ar: "كن شريكاً",
   },
+  global_bim_solutions: {
+    en: "Global BIM Solutions",
+    ar: "حلول نمذجة معلومات البناء العالمية",
+  },
+  bim_coordination_stat: {
+    en: "BIM Projects Coordinated",
+    ar: "مشاريع BIM منسقة",
+  },
+  precision_rate: {
+    en: "Precision Rate",
+    ar: "معدل الدقة",
+  },
+  industry_leadership: {
+    en: "Years Industry Leadership",
+    ar: "سنوات خبرتنا في ادارة وتخطيط للصناعة",
+  },
+  certifications: {
+    en: "Professional Certifications",
+    ar: "الشهادات الاحترافية",
+  },
 }
 
 interface I18nContextType {
@@ -477,12 +533,14 @@ interface I18nContextType {
 const I18nContext = createContext<I18nContextType | undefined>(undefined)
 
 export const I18nProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<Language>("en")
+  const [lang, setLang] = useState<Language>("ar")
   const isRTL = lang === "ar"
 
   useEffect(() => {
     const savedLang = localStorage.getItem("language") as Language
+    console.log(savedLang)
     if (savedLang && (savedLang === "en" || savedLang === "ar")) {
+      console.log(savedLang)
       setLang(savedLang)
     }
   }, [])

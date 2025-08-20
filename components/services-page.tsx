@@ -20,6 +20,10 @@ import {
   Clock,
   Award,
   Lightbulb,
+  Globe,
+  Scan,
+  Archive,
+  Camera,
 } from "lucide-react"
 
 export function ServicesPagePreview() {
@@ -27,135 +31,135 @@ export function ServicesPagePreview() {
 
   const services = [
     {
-      id: "bim-coordination",
+      id: "bim-services",
       icon: Layers3,
       title: {
-        en: "BIM Coordination & Management",
-        ar: "تنسيق وإدارة نمذجة معلومات البناء",
+        en: "BIM Services",
+        ar: "خدمات نمذجة معلومات البناء",
       },
       description: {
-        en: "Advanced Building Information Modeling coordination ensuring seamless integration across all disciplines",
-        ar: "تنسيق متقدم لنمذجة معلومات البناء يضمن التكامل السلس عبر جميع التخصصات",
+        en: "Advanced BIM solutions supporting Engineers, Architects, Constructors, and Manufacturers with comprehensive modeling for all project types",
+        ar: "حلول BIM متقدمة تدعم المهندسين والمعماريين والمقاولين والمصنعين بنمذجة شاملة لجميع أنواع المشاريع",
       },
       features: [
-        { en: "3D Model Coordination", ar: "تنسيق النماذج ثلاثية الأبعاد" },
-        { en: "Clash Detection & Resolution", ar: "اكتشاف وحل التعارضات" },
-        { en: "Multi-Discipline Integration", ar: "التكامل متعدد التخصصات" },
-        { en: "4D/5D BIM Implementation", ar: "تنفيذ نمذجة معلومات البناء 4D/5D" },
+        { en: "Architectural, Structural & MEP Modeling", ar: "النمذجة المعمارية والإنشائية والـ MEP" },
+        { en: "3D Renderings & Animations", ar: "العروض ثلاثية الأبعاد والرسوم المتحركة" },
+        { en: "4D/5D Planning & Simulations", ar: "التخطيط والمحاكاة 4D/5D" },
+        { en: "Virtual Reality Experiences", ar: "تجارب الواقع الافتراضي" },
       ],
       deliverables: {
-        en: "Coordinated BIM Models, Clash Reports, Implementation Plans",
-        ar: "نماذج BIM منسقة، تقارير التعارضات، خطط التنفيذ",
+        en: "BIM Models, Plans & Reports, Quantity Take-offs, Multidisciplinary Coordination",
+        ar: "نماذج BIM، المخططات والتقارير، استخراج الكميات، التنسيق متعدد التخصصات",
       },
     },
     {
-      id: "architectural-visualization",
-      icon: Eye,
-      title: {
-        en: "Architectural Visualization",
-        ar: "التصور المعماري",
-      },
-      description: {
-        en: "Photorealistic renderings and immersive visualizations that bring your architectural vision to life",
-        ar: "عروض واقعية وتصورات غامرة تحيي رؤيتك المعمارية",
-      },
-      features: [
-        { en: "Photorealistic Renderings", ar: "عروض واقعية" },
-        { en: "Virtual Reality Walkthroughs", ar: "جولات الواقع الافتراضي" },
-        { en: "Interactive 3D Models", ar: "نماذج ثلاثية الأبعاد تفاعلية" },
-        { en: "Animation & Flythrough", ar: "الرسوم المتحركة والطيران" },
-      ],
-      deliverables: {
-        en: "High-Resolution Images, VR Files, Interactive Models",
-        ar: "صور عالية الدقة، ملفات الواقع الافتراضي، نماذج تفاعلية",
-      },
-    },
-    {
-      id: "mep-integration",
-      icon: Zap,
-      title: {
-        en: "MEP Systems Integration",
-        ar: "تكامل أنظمة الكهرباء والميكانيك والسباكة",
-      },
-      description: {
-        en: "Comprehensive mechanical, electrical, and plumbing systems design and coordination",
-        ar: "تصميم وتنسيق شامل لأنظمة الميكانيك والكهرباء والسباكة",
-      },
-      features: [
-        { en: "HVAC System Design", ar: "تصميم أنظمة التكييف" },
-        { en: "Electrical Load Analysis", ar: "تحليل الأحمال الكهربائية" },
-        { en: "Plumbing & Fire Safety", ar: "السباكة والسلامة من الحرائق" },
-        { en: "Energy Efficiency Optimization", ar: "تحسين كفاءة الطاقة" },
-      ],
-      deliverables: {
-        en: "MEP Drawings, Load Calculations, System Specifications",
-        ar: "رسومات MEP، حسابات الأحمال، مواصفات الأنظمة",
-      },
-    },
-    {
-      id: "structural-engineering",
-      icon: Building2,
-      title: {
-        en: "Structural Engineering",
-        ar: "الهندسة الإنشائية",
-      },
-      description: {
-        en: "Advanced structural analysis and design ensuring safety, efficiency, and code compliance",
-        ar: "تحليل وتصميم إنشائي متقدم يضمن السلامة والكفاءة والامتثال للمعايير",
-      },
-      features: [
-        { en: "Structural Analysis & Design", ar: "التحليل والتصميم الإنشائي" },
-        { en: "Foundation Engineering", ar: "هندسة الأساسات" },
-        { en: "Seismic & Wind Analysis", ar: "تحليل الزلازل والرياح" },
-        { en: "Code Compliance Review", ar: "مراجعة الامتثال للمعايير" },
-      ],
-      deliverables: {
-        en: "Structural Drawings, Calculations, Specifications",
-        ar: "الرسومات الإنشائية، الحسابات، المواصفات",
-      },
-    },
-    {
-      id: "civil-engineering",
-      icon: Ruler,
-      title: {
-        en: "Civil Engineering Solutions",
-        ar: "حلول الهندسة المدنية",
-      },
-      description: {
-        en: "Comprehensive civil engineering services from site planning to infrastructure design",
-        ar: "خدمات هندسة مدنية شاملة من تخطيط الموقع إلى تصميم البنية التحتية",
-      },
-      features: [
-        { en: "Site Planning & Grading", ar: "تخطيط الموقع والتسوية" },
-        { en: "Drainage & Utilities", ar: "الصرف والمرافق" },
-        { en: "Road & Pavement Design", ar: "تصميم الطرق والرصف" },
-        { en: "Environmental Compliance", ar: "الامتثال البيئي" },
-      ],
-      deliverables: {
-        en: "Site Plans, Grading Plans, Utility Layouts",
-        ar: "مخططات الموقع، مخططات التسوية، تخطيطات المرافق",
-      },
-    },
-    {
-      id: "project-management",
+      id: "bim-consulting",
       icon: Users,
       title: {
-        en: "Project Management & Consulting",
-        ar: "إدارة المشاريع والاستشارات",
+        en: "BIM Consulting & Implementation",
+        ar: "استشارات وتنفيذ BIM",
       },
       description: {
-        en: "Expert project management ensuring timely delivery and optimal resource utilization",
-        ar: "إدارة مشاريع خبيرة تضمن التسليم في الوقت المحدد والاستخدام الأمثل للموارد",
+        en: "Comprehensive BIM consulting services guiding organizations in successfully adopting BIM methodology and developing skilled teams",
+        ar: "خدمات استشارية شاملة لـ BIM توجه المؤسسات في اعتماد منهجية BIM بنجاح وتطوير فرق ماهرة",
       },
       features: [
-        { en: "Project Planning & Scheduling", ar: "تخطيط وجدولة المشاريع" },
-        { en: "Quality Assurance & Control", ar: "ضمان ومراقبة الجودة" },
-        { en: "Risk Management", ar: "إدارة المخاطر" },
-        { en: "Stakeholder Coordination", ar: "تنسيق أصحاب المصلحة" },
+        { en: "BIM Strategy Development", ar: "تطوير استراتيجية BIM" },
+        { en: "Team Training Programs", ar: "برامج تدريب الفرق" },
+        { en: "Process Implementation", ar: "تنفيذ العمليات" },
+        { en: "Technology Integration", ar: "تكامل التكنولوجيا" },
       ],
       deliverables: {
-        en: "Project Plans, Progress Reports, Quality Documentation",
-        ar: "خطط المشاريع، تقارير التقدم، وثائق الجودة",
+        en: "Implementation Plans, Training Materials, Process Documentation, Ongoing Support",
+        ar: "خطط التنفيذ، المواد التدريبية، توثيق العمليات، الدعم المستمر",
+      },
+    },
+    {
+      id: "cad-services",
+      icon: FileText,
+      title: {
+        en: "CAD Services",
+        ar: "خدمات الرسم بمساعدة الحاسوب",
+      },
+      description: {
+        en: "Comprehensive CAD services supporting all project stages with precise documentation and detailed drawings",
+        ar: "خدمات شاملة للرسم بمساعدة الحاسوب تدعم جميع مراحل المشروع بتوثيق دقيق ورسوم مفصلة",
+      },
+      features: [
+        { en: "Shop Drawings & As-Built Plans", ar: "رسوم التنفيذ والمخططات الفعلية" },
+        { en: "Fabrication Drawings", ar: "رسوم التصنيع" },
+        { en: "Metal Fabrication Plans", ar: "مخططات تصنيع المعادن" },
+        { en: "Quantity Take-offs", ar: "استخراج الكميات" },
+      ],
+      deliverables: {
+        en: "Technical Drawings, Fabrication Plans, Documentation, Measurements",
+        ar: "الرسوم التقنية، مخططات التصنيع، التوثيق، القياسات",
+      },
+    },
+    {
+      id: "international-partnerships",
+      icon: Globe,
+      title: {
+        en: "International Project Partnerships",
+        ar: "شراكات المشاريع الدولية",
+      },
+      description: {
+        en: "Strategic bridge between Syrian companies and European firms for large-scale infrastructure projects",
+        ar: "جسر استراتيجي بين الشركات السورية والشركات الأوروبية لمشاريع البنية التحتية الكبيرة",
+      },
+      features: [
+        { en: "Airport & Energy Projects", ar: "مشاريع المطارات والطاقة" },
+        { en: "Water Infrastructure", ar: "البنية التحتية للمياه" },
+        { en: "Urban Reconstruction", ar: "إعادة الإعمار الحضري" },
+        { en: "On-site Supervision", ar: "الإشراف الميداني" },
+      ],
+      deliverables: {
+        en: "Partnership Agreements, Project Supervision, Knowledge Transfer, Quality Implementation",
+        ar: "اتفاقيات الشراكة، إشراف المشروع، نقل المعرفة، التنفيذ عالي الجودة",
+      },
+    },
+    {
+      id: "digitalization",
+      icon: Archive,
+      title: {
+        en: "Digitalization Services",
+        ar: "خدمات الرقمنة",
+      },
+      description: {
+        en: "Comprehensive digitalization solutions organizing and optimizing archives, servers, and documentation systems",
+        ar: "حلول رقمنة شاملة تنظم وتحسن الأرشيف والخوادم وأنظمة التوثيق",
+      },
+      features: [
+        { en: "Document Scanning & Digitizing", ar: "مسح ورقمنة الوثائق" },
+        { en: "As-Built Plans Updating", ar: "تحديث المخططات الفعلية" },
+        { en: "Folder System Organization", ar: "تنظيم أنظمة المجلدات" },
+        { en: "Data Management Solutions", ar: "حلول إدارة البيانات" },
+      ],
+      deliverables: {
+        en: "Digital Archives, Updated Plans, Organizational Systems, Data Access Solutions",
+        ar: "الأرشيف الرقمي، المخططات المحدثة، الأنظمة التنظيمية، حلول الوصول للبيانات",
+      },
+    },
+    {
+      id: "topographic-surveying",
+      icon: Camera,
+      title: {
+        en: "Topographic Surveying with Drone & Laser Scanning",
+        ar: "المسح الطوبوغرافي بالطائرات المسيرة والليزر",
+      },
+      description: {
+        en: "Advanced surveying solutions using drone photogrammetry and laser scanning technology for precise 3D modeling",
+        ar: "حلول مسح متقدمة باستخدام التصوير بالطائرات المسيرة وتقنية المسح بالليزر للنمذجة ثلاثية الأبعاد الدقيقة",
+      },
+      features: [
+        { en: "Drone-based Photogrammetry", ar: "التصوير بالطائرات المسيرة" },
+        { en: "360º Laser Scanning", ar: "المسح بالليزر 360 درجة" },
+        { en: "High-accuracy Point Clouds", ar: "سحب النقاط عالية الدقة" },
+        { en: "3D Model Generation", ar: "إنتاج النماذج ثلاثية الأبعاد" },
+      ],
+      deliverables: {
+        en: "Point Cloud Data, 3D Models, Topographic Plans, Precise Measurements",
+        ar: "بيانات سحابة النقاط، النماذج ثلاثية الأبعاد، المخططات الطوبوغرافية، القياسات الدقيقة",
       },
     },
   ]
@@ -165,35 +169,35 @@ export function ServicesPagePreview() {
       step: "01",
       title: { en: "Analysis & Assessment", ar: "التحليل والتقييم" },
       description: {
-        en: "Comprehensive project analysis and technical requirements assessment",
-        ar: "تحليل شامل للمشروع وتقييم المتطلبات التقنية",
+        en: "Comprehensive project analysis and technical requirements assessment using international best practices",
+        ar: "تحليل شامل للمشروع وتقييم المتطلبات التقنية باستخدام أفضل الممارسات الدولية",
       },
       icon: FileText,
     },
     {
       step: "02",
-      title: { en: "Design & Modeling", ar: "التصميم والنمذجة" },
+      title: { en: "Advanced BIM Modeling", ar: "النمذجة المتقدمة BIM" },
       description: {
-        en: "Advanced BIM modeling and multi-disciplinary design development",
-        ar: "نمذجة BIM متقدمة وتطوير التصميم متعدد التخصصات",
+        en: "Multi-disciplinary BIM modeling with programming tools and automation for maximum efficiency",
+        ar: "نمذجة BIM متعددة التخصصات مع أدوات البرمجة والأتمتة للحصول على أقصى كفاءة",
       },
-      icon: Cpu,
+      icon: Layers3,
     },
     {
       step: "03",
       title: { en: "Coordination & Integration", ar: "التنسيق والتكامل" },
       description: {
-        en: "Cross-disciplinary coordination and clash detection resolution",
-        ar: "التنسيق عبر التخصصات وحل اكتشاف التعارضات",
+        en: "Cross-disciplinary coordination ensuring seamless integration across all project phases",
+        ar: "التنسيق عبر التخصصات يضمن التكامل السلس عبر جميع مراحل المشروع",
       },
-      icon: Layers3,
+      icon: Wrench,
     },
     {
       step: "04",
       title: { en: "Delivery & Support", ar: "التسليم والدعم" },
       description: {
-        en: "Final deliverables and ongoing technical support throughout construction",
-        ar: "التسليمات النهائية والدعم التقني المستمر أثناء البناء",
+        en: "Complete deliverables with ongoing technical support and supervision throughout construction",
+        ar: "التسليمات الكاملة مع الدعم التقني المستمر والإشراف أثناء البناء",
       },
       icon: Award,
     },
@@ -202,23 +206,46 @@ export function ServicesPagePreview() {
   const expertiseAreas = [
     {
       icon: Building2,
-      title: { en: "Architecture", ar: "العمارة" },
-      description: { en: "Innovative architectural design solutions", ar: "حلول تصميم معماري مبتكرة" },
+      title: { en: "Architecture & Civil", ar: "العمارة والمدني" },
+      description: { en: "Comprehensive architectural and civil engineering solutions", ar: "حلول شاملة للهندسة المعمارية والمدنية" },
     },
     {
-      icon: Wrench,
-      title: { en: "MEP Systems", ar: "أنظمة MEP" },
-      description: { en: "Integrated building systems design", ar: "تصميم أنظمة البناء المتكاملة" },
+      icon: Zap,
+      title: { en: "MEP & Energy", ar: "MEP والطاقة" },
+      description: { en: "Mechanical, electrical, plumbing and energy systems", ar: "الأنظمة الميكانيكية والكهربائية والصحية والطاقة" },
     },
     {
       icon: Layers3,
       title: { en: "BIM Technology", ar: "تقنية BIM" },
-      description: { en: "Advanced modeling and coordination", ar: "النمذجة والتنسيق المتقدم" },
+      description: { en: "Advanced BIM with integrated programming tools", ar: "BIM متقدم مع أدوات البرمجة المدمجة" },
     },
     {
-      icon: Lightbulb,
-      title: { en: "Sustainability", ar: "الاستدامة" },
-      description: { en: "Green building and energy efficiency", ar: "البناء الأخضر وكفاءة الطاقة" },
+      icon: Globe,
+      title: { en: "International Projects", ar: "المشاريع الدولية" },
+      description: { en: "Bridging local and international expertise", ar: "ربط الخبرة المحلية والدولية" },
+    },
+  ]
+
+  const keyBenefits = [
+    {
+      icon: Award,
+      title: { en: "International Experience", ar: "الخبرة الدولية" },
+      description: { en: "Multinational company experience with detailed precision", ar: "خبرة شركات متعددة الجنسيات مع دقة تفصيلية" },
+    },
+    {
+      icon: Cpu,
+      title: { en: "Programming Integration", ar: "تكامل البرمجة" },
+      description: { en: "Enhanced BIM with programming tools and automation", ar: "BIM محسن بأدوات البرمجة والأتمتة" },
+    },
+    {
+      icon: Users,
+      title: { en: "Local Supervision", ar: "الإشراف المحلي" },
+      description: { en: "On-site supervision ensuring quality implementation", ar: "إشراف ميداني يضمن التنفيذ عالي الجودة" },
+    },
+    {
+      icon: Clock,
+      title: { en: "Streamlined Workflows", ar: "سير العمل المبسط" },
+      description: { en: "Optimized processes reducing errors and timelines", ar: "العمليات المحسنة تقلل الأخطاء والمواعيد النهائية" },
     },
   ]
 
@@ -229,17 +256,17 @@ export function ServicesPagePreview() {
           <div className="absolute inset-0 bg-[url('/architectural-blueprints.png')] bg-cover bg-center opacity-10" />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20" />
           <div className="container relative mx-auto px-4">
-            <div className="mx-auto max-w-4xl text-center">
-              <Badge className="mb-6 bg-blue-600/20 text-blue-200 border-blue-400/30">
-                {isRTL ? "الخبرة التقنية المتقدمة" : "Advanced Technical Expertise"}
+            <div className="mx-auto max-w-6xl text-center">
+              <Badge className="mb-6 text-sm bg-blue-600/20 text-blue-200 border-blue-400/30">
+                {isRTL ? "حلول BIM شاملة للمشاريع المعمارية والإنشائية والـ MEP والمدنية والصناعية" : "Comprehensive BIM Solutions for Architecture, Structure, MEP, Civil, and Industrial Projects"}
               </Badge>
               <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                 {isRTL ? "خدمات أفرانوفا الاستشارية" : "Avranova Consulting Services"}
               </h1>
-              <p className="mb-8 text-xl text-slate-300 md:text-2xl leading-relaxed">
+              <p className="mb-8 text-lg text-slate-300 md:text-xl leading-relaxed max-w-5xl mx-auto">
                 {isRTL
-                  ? "حلول BIM متقدمة، تصور معماري، وتكامل MEP لتنفيذ مبسط وأداء محسن من التصميم إلى البناء"
-                  : "Advanced BIM solutions, architectural visualization, and MEP integration for streamlined execution and optimized performance from design to construction"}
+                  ? "نقدم خدمات BIM متقدمة محسنة بأدوات البرمجة المتكاملة. منهجنا يبسط تنفيذ المشاريع، يقلل الأخطاء، ويحسن الأداء من التصميم إلى البناء. بدمج التكنولوجيا المتطورة مع الخبرة الصناعية، نضمن الدقة والكفاءة وسير العمل متعدد التخصصات المنسق بالكامل لكل مشروع."
+                  : "At Avranova Consulting, we deliver advanced BIM services enhanced with integrated programming tools. Our approach streamlines project execution, reduces errors, and optimizes performance from design to construction. By combining cutting-edge technology with industry expertise, we ensure precision, efficiency, and fully coordinated multidisciplinary workflows for every project."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
@@ -249,7 +276,7 @@ export function ServicesPagePreview() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-slate-400 text-slate-300 hover:bg-slate-800 bg-transparent"
+                  className="border-slate-400 text-slate-300 dark:hover:bg-slate-100 hover:bg-slate-800 bg-transparent"
                 >
                   {isRTL ? "استكشف مشاريعنا" : "Explore Our Projects"}
                 </Button>
@@ -258,7 +285,7 @@ export function ServicesPagePreview() {
           </div>
         </section>
 
-        <section className="py-16 bg-slate-50 dark:bg-slate-900">
+        <section className="py-16  bg-slate-50 dark:bg-slate-900">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {expertiseAreas.map((area, index) => {
@@ -291,8 +318,8 @@ export function ServicesPagePreview() {
               </h2>
               <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
                 {isRTL
-                  ? "نجمع بين الدقة التقنية والحساسية التصميمية لتقديم مساحات ليست فقط وظيفية بل تتطلع إلى المستقبل"
-                  : "We bring together technical accuracy and design sensitivity to deliver spaces that are not only functional but forward-thinking"}
+                  ? "نجمع بين الدقة التقنية والخبرة الدولية لتقديم حلول هندسية متقدمة تلبي أعلى معايير الجودة"
+                  : "We combine technical precision with international expertise to deliver advanced engineering solutions that meet the highest quality standards"}
               </p>
             </div>
 
@@ -310,8 +337,8 @@ export function ServicesPagePreview() {
                         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-lg">
                           <Icon className="h-7 w-7" />
                         </div>
-                        <Badge variant="secondary" className="text-xs font-medium bg-slate-100 dark:bg-slate-700">
-                          {isRTL ? "تقني" : "Technical"}
+                        <Badge variant="secondary" className="text-xs font-medium  bg-slate-700">
+                          {isRTL ? "متخصص" : "Specialized"}
                         </Badge>
                       </div>
                       <CardTitle className="text-xl font-bold text-foreground mb-2">
@@ -326,13 +353,24 @@ export function ServicesPagePreview() {
                         <h4 className="font-semibold text-sm text-foreground mb-3">
                           {isRTL ? "الخدمات الأساسية:" : "Core Services:"}
                         </h4>
-                        <ul className="space-y-2">
+                        <ul className={`space-y-2 ${isRTL ? "items-start ":"items-end"}flex flex-col`}>
                           {service.features.map((feature, index) => (
                             <li key={index} className="flex items-center text-sm text-muted-foreground">
-                              <CheckCircle
+                             {isRTL ? (
+                              <>
+                              {feature[isRTL ? "ar" : "en"]}
+                               <CheckCircle
+                                className={`h-4 w-4 text-blue-500 mr-4 flex-shrink-0`}
+                              />
+                              </>
+                             ) : (
+                              <>
+                               <CheckCircle
                                 className={`h-4 w-4 text-blue-500 ${isRTL ? "ml-2" : "mr-2"} flex-shrink-0`}
                               />
                               {feature[isRTL ? "ar" : "en"]}
+                              </>
+                             )}
                             </li>
                           ))}
                         </ul>
@@ -363,8 +401,8 @@ export function ServicesPagePreview() {
               </h2>
               <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
                 {isRTL
-                  ? "نتبع منهجية منظمة تضمن الدقة التقنية والتسليم في الوقت المحدد"
-                  : "We follow a structured methodology ensuring technical precision and timely delivery"}
+                  ? "نتبع منهجية منظمة تدمج أفضل الممارسات الدولية مع الخبرة المحلية"
+                  : "We follow a structured methodology that integrates international best practices with local expertise"}
               </p>
             </div>
 
@@ -397,7 +435,7 @@ export function ServicesPagePreview() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="py-14">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -406,49 +444,55 @@ export function ServicesPagePreview() {
                 </h2>
                 <p className="mb-8 text-lg text-muted-foreground leading-relaxed">
                   {isRTL
-                    ? "نحن نؤمن أن الابتكار الحقيقي يبدأ بالدقة والإبداع والتعاون السلس. فريقنا يجمع بين الدقة التقنية والحساسية التصميمية."
-                    : "We believe that true innovation starts with precision, creativity, and seamless collaboration. Our team brings together technical accuracy and design sensitivity."}
+                    ? "نجمع بين الخبرة الدولية والفهم العميق للسوق المحلي، مما يضمن تنفيذ مشاريع عالية الجودة تساهم في التطوير والتحديث الحضري."
+                    : "We combine international expertise with deep understanding of the local market, ensuring high-quality project implementation that contributes to urban development and modernization."}
                 </p>
                 <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="flex items-start space-x-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-                      <Award className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">
-                        {isRTL ? "خبرة متعددة التخصصات" : "Multi-Disciplinary Expertise"}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {isRTL
-                          ? "خبرة عبر العمارة والمدني والإنشائي وMEP"
-                          : "Expertise across Architecture, Civil, Structural, and MEP"}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
-                      <Clock className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">
-                        {isRTL ? "تسليم في الوقت المحدد" : "Timely Delivery"}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {isRTL ? "التزام بالمواعيد النهائية والجودة" : "Commitment to deadlines and quality"}
-                      </p>
-                    </div>
-                  </div>
+                  {keyBenefits.map((benefit, index) => {
+                    const Icon = benefit.icon
+                    return (
+                      <div key={index} className={`flex ${isRTL ? "justify-start" : "justify-end"} items-start gap-3`}>
+                       {isRTL ? (<> 
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-1">
+                            {benefit.title[isRTL ? "ar" : "en"]}
+                          </h4>
+                          <p className="text-sm text-muted-foreground">
+                            {benefit.description[isRTL ? "ar" : "en"]}
+                          </p>
+                        </div>
+                        <div className="flex h-10 w-10
+                         items-center justify-center
+                          rounded-lg bg-blue-100 dark:bg-blue-900/30
+                           text-blue-600 dark:text-blue-400">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        </>) : (<>
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-foreground mb-1">
+                            {benefit.title[isRTL ? "ar" : "en"]}
+                          </h4>
+                          <p className="text-sm text-muted-foreground">
+                            {benefit.description[isRTL ? "ar" : "en"]}
+                          </p>
+                        </div></>)}
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20 p-8 flex items-center justify-center">
+                <div className="h-[70vh] max-h-[600px] rounded-2xl bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20 p-8 flex items-center justify-center">
                   <div className="text-center">
-                    <Building2 className="h-24 w-24 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
+                    <Globe className="h-24 w-24 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
                     <h3 className="text-2xl font-bold text-foreground mb-2">
-                      {isRTL ? "حلول ذكية ومستدامة" : "Smart & Sustainable Solutions"}
+                      {isRTL ? "الجسر بين السوق المحلي والعالمي" : "Bridging Local & International"}
                     </h3>
                     <p className="text-muted-foreground">
-                      {isRTL ? "هندسة فعالة للمستقبل" : "Efficient engineering for the future"}
+                      {isRTL ? "نقل المعرفة والخبرة العالمية للمشاريع المحلية" : "Transferring global knowledge and expertise to local projects"}
                     </p>
                   </div>
                 </div>
@@ -465,12 +509,12 @@ export function ServicesPagePreview() {
             </h2>
             <p className="mb-8 text-xl text-slate-300 max-w-2xl mx-auto">
               {isRTL
-                ? "دعنا نساعدك في تحقيق رؤيتك بحلول هندسية ذكية ومستدامة وفعالة"
-                : "Let us help you bring your vision to life with smart, sustainable, and efficient engineering solutions"}
+                ? "دعنا نساعدك في تحقيق رؤيتك بحلول BIM متقدمة وخبرة دولية تضمن النجاح"
+                : "Let us help you bring your vision to life with advanced BIM solutions and international expertise that ensures success"}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                {isRTL ? "احصل على اقتراح مخصص" : "Get Custom Proposal"}
+                {isRTL ? "احصل على استشارة" : "Get Consultation"}
                 <ArrowRight className={`ml-2 h-5 w-5 ${isRTL ? "rotate-180" : ""}`} />
               </Button>
               <Button

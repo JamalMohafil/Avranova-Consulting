@@ -5,117 +5,138 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useI18n } from "@/lib/i18n"
-import { Target, Eye, Users, Award, TrendingUp, Shield, ArrowRight } from "lucide-react"
+import { Target, Eye, Users, Award, TrendingUp, Shield, ArrowRight, Building2, Cpu, Lightbulb, Globe } from "lucide-react"
+import Link from "next/link"
 
 const AboutPagePreview = () => {
    const { t, isRTL } = useI18n()
 
   const values = [
     {
-      icon: Shield,
-      title: { en: "Integrity", ar: "النزاهة" },
-      description: {
-        en: "We maintain the highest ethical standards in all our business practices",
-        ar: "نحافظ على أعلى المعايير الأخلاقية في جميع ممارساتنا التجارية",
-      },
-    },
-    {
-      icon: Target,
-      title: { en: "Excellence", ar: "التميز" },
-      description: {
-        en: "We strive for excellence in every project and client interaction",
-        ar: "نسعى للتميز في كل مشروع وتفاعل مع العملاء",
-      },
-    },
-    {
-      icon: Users,
-      title: { en: "Collaboration", ar: "التعاون" },
-      description: {
-        en: "We believe in the power of teamwork and collaborative partnerships",
-        ar: "نؤمن بقوة العمل الجماعي والشراكات التعاونية",
-      },
-    },
-    {
-      icon: TrendingUp,
+      icon: Lightbulb,
       title: { en: "Innovation", ar: "الابتكار" },
       description: {
-        en: "We embrace innovative solutions to solve complex business challenges",
-        ar: "نتبنى الحلول المبتكرة لحل التحديات التجارية المعقدة",
+        en: "We leverage the latest technology, programming, and artificial intelligence to automate processes and drive innovation",
+        ar: "نستفيد من أحدث التقنيات والبرمجة والذكاء الاصطناعي لأتمتة العمليات وقيادة الابتكار",
+      },
+    },
+    {
+      icon: Award,
+      title: { en: "Excellence", ar: "التميز" },
+      description: {
+        en: "We achieve excellence by combining advanced technology with a dedicated, highly skilled team",
+        ar: "نحقق التميز من خلال دمج التكنولوجيا المتقدمة مع فريق مخصص عالي المهارة",
+      },
+    },
+    {
+      icon: Shield,
+      title: { en: "Quality Assurance", ar: "ضمان الجودة" },
+      description: {
+        en: "We ensure quality at every stage of the project by promoting teamwork and individual responsibility",
+        ar: "نضمن الجودة في كل مرحلة من مراحل المشروع من خلال تعزيز العمل الجماعي والمسؤولية الفردية",
+      },
+    },
+    {
+      icon: Globe,
+      title: { en: "Sustainability", ar: "الاستدامة" },
+      description: {
+        en: "We implement sustainable and environmentally responsible practices, going beyond legal requirements",
+        ar: "نطبق ممارسات مستدامة ومسؤولة بيئياً، نتجاوز المتطلبات القانونية",
       },
     },
   ]
 
   const achievements = [
     {
-      number: "500+",
-      title: { en: "Projects Completed", ar: "مشروع مكتمل" },
-      description: { en: "Successfully delivered", ar: "تم تسليمها بنجاح" },
+      number: "100+",
+      title: { en: "BIM Projects", ar: "مشروع BIM" },
+      description: { en: "Successfully completed", ar: "مكتملة بنجاح" },
     },
     {
-      number: "15+",
-      title: { en: "Years Experience", ar: "سنة خبرة" },
-      description: { en: "In the industry", ar: "في الصناعة" },
-    },
-    {
-      number: "200+",
-      title: { en: "Happy Clients", ar: "عميل سعيد" },
-      description: { en: "Across the globe", ar: "حول العالم" },
+      number: "5+",
+      title: { en: "Years Experience", ar: "سنوات خبرة" },
+      description: { en: "In BIM & CAD", ar: "في BIM و CAD" },
     },
     {
       number: "50+",
-      title: { en: "Expert Consultants", ar: "مستشار خبير" },
-      description: { en: "On our team", ar: "في فريقنا" },
+      title: { en: "Satisfied Clients", ar: "عميل راضٍ" },
+      description: { en: "Worldwide", ar: "حول العالم" },
+    },
+    {
+      number: "24/7",
+      title: { en: "Support Available", ar: "دعم متاح" },
+      description: { en: "For all clients", ar: "لجميع العملاء" },
     },
   ]
 
   const timeline = [
     {
-      year: "2008",
-      title: { en: "Company Founded", ar: "تأسيس الشركة" },
+      year: "2019",
+      title: { en: "Foundation & Vision", ar: "التأسيس والرؤية" },
       description: {
-        en: "Started as a small consulting firm with a vision to transform businesses",
-        ar: "بدأت كشركة استشارية صغيرة برؤية لتحويل الأعمال",
-      },
-    },
-    {
-      year: "2012",
-      title: { en: "Regional Expansion", ar: "التوسع الإقليمي" },
-      description: {
-        en: "Expanded operations to serve clients across the Middle East region",
-        ar: "توسعت العمليات لخدمة العملاء في جميع أنحاء منطقة الشرق الأوسط",
-      },
-    },
-    {
-      year: "2016",
-      title: { en: "Digital Transformation", ar: "التحول الرقمي" },
-      description: {
-        en: "Launched digital consulting services to help businesses modernize",
-        ar: "أطلقت خدمات الاستشارات الرقمية لمساعدة الشركات على التحديث",
+        en: "Avranova Consulting was founded with a clear vision to revolutionize BIM and CAD solutions in the construction industry",
+        ar: "تأسست أفرانوفا كونسلتنغ برؤية واضحة لإحداث ثورة في حلول BIM و CAD في صناعة البناء",
       },
     },
     {
       year: "2020",
-      title: { en: "Global Recognition", ar: "الاعتراف العالمي" },
+      title: { en: "ISO Certification", ar: "شهادة الآيزو" },
       description: {
-        en: "Received international awards for excellence in consulting services",
-        ar: "حصلت على جوائز دولية للتميز في الخدمات الاستشارية",
+        en: "Achieved ISO 9001:2015 and ISO 14001:2015 certifications, establishing our commitment to quality and environmental standards",
+        ar: "حصلنا على شهادات ISO 9001:2015 و ISO 14001:2015، مؤكدين التزامنا بمعايير الجودة والبيئة",
+      },
+    },
+    {
+      year: "2021",
+      title: { en: "Technology Integration", ar: "دمج التكنولوجيا" },
+      description: {
+        en: "Integrated AI and automation tools into our BIM workflows, significantly improving project efficiency and accuracy",
+        ar: "دمجنا أدوات الذكاء الاصطناعي والأتمتة في سير عمل BIM، مما حسن كثيراً من كفاءة ودقة المشاريع",
+      },
+    },
+    {
+      year: "2022",
+      title: { en: "Training Programs", ar: "برامج التدريب" },
+      description: {
+        en: "Launched comprehensive BIM training programs, empowering professionals across the industry with cutting-edge skills",
+        ar: "أطلقنا برامج تدريب BIM شاملة، مكنّا المهنيين في الصناعة من اكتساب مهارات متطورة",
+      },
+    },
+    {
+      year: "2023",
+      title: { en: "Global Expansion", ar: "التوسع العالمي" },
+      description: {
+        en: "Expanded operations internationally, serving clients across multiple continents with innovative BIM solutions",
+        ar: "توسعنا عالمياً، نخدم العملاء عبر قارات متعددة بحلول BIM المبتكرة",
       },
     },
     {
       year: "2024",
-      title: { en: "Innovation Hub", ar: "مركز الابتكار" },
+      title: { en: "Sustainability Focus", ar: "التركيز على الاستدامة" },
       description: {
-        en: "Established innovation center to drive future business solutions",
-        ar: "أنشأت مركز الابتكار لدفع حلول الأعمال المستقبلية",
+        en: "Enhanced our environmental commitment by developing sustainable BIM practices and green building solutions",
+        ar: "عززنا التزامنا البيئي بتطوير ممارسات BIM المستدامة وحلول البناء الأخضر",
       },
     },
   ]
 
   const certifications = [
-    { name: "ISO 9001:2015", type: "Quality Management" },
-    { name: "PMP Certified", type: "Project Management" },
-    { name: "Six Sigma", type: "Process Excellence" },
-    { name: "ITIL Foundation", type: "IT Service Management" },
+    { 
+      name: "AUTODESK REVIT CERTIFICATION", 
+      type: { en: "BIM Software Excellence", ar: "تميز برامج BIM" }
+    },
+    { 
+      name: "Master in BIM Management", 
+      type: { en: "University of Barcelona", ar: "جامعة برشلونة" }
+    },
+    { 
+      name: "ISO 9001:2015", 
+      type: { en: "Quality Management", ar: "إدارة الجودة" }
+    },
+    { 
+      name: "ISO 14001:2015", 
+      type: { en: "Environmental Management", ar: "الإدارة البيئية" }
+    },
   ]
 
   return (
@@ -123,15 +144,22 @@ const AboutPagePreview = () => {
  
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary via-primary/90 to-secondary py-24 text-white">
+       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-24 text-white overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/architectural-blueprints.png')] bg-cover bg-center opacity-10" />
+                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20" />
           <div className="absolute inset-0 bg-black/10" />
           <div className="container relative mx-auto px-4">
             <div className="mx-auto max-w-4xl text-center">
-              <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">{isRTL ? "من نحن" : "About Us"}</h1>
-              <p className="mb-8 text-xl text-white/90 md:text-2xl">
+              <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
+                {isRTL ? "من نحن" : "About Us"}
+              </h1>
+              <h2 className="mb-4 text-2xl font-semibold text-white/90 md:text-3xl">
+                {isRTL ? "أفرانوفا للاستشارات: الابتكار والتميز في مشاريع BIM و CAD" : "Avranova Consulting: Innovation and Excellence in BIM and CAD Projects"}
+              </h2>
+              <p className="mb-8 text-xl text-white/80 md:text-xl">
                 {isRTL
-                  ? "نحن شركة استشارية رائدة ملتزمة بتحويل الأعمال وتحقيق النمو المستدام"
-                  : "We are a leading consulting firm committed to transforming businesses and driving sustainable growth"}
+                  ? "نتخصص في تقديم حلول BIM (نمذجة معلومات البناء) و CAD (التصميم بمساعدة الحاسوب) الشاملة"
+                  : "We specialize in providing comprehensive BIM (Building Information Modeling) and CAD (Computer Aided Design) solutions"}
               </p>
             </div>
           </div>
@@ -142,37 +170,37 @@ const AboutPagePreview = () => {
           <div className="container mx-auto px-4">
             <div className="grid gap-12 lg:grid-cols-2">
               <Card className="border-0 bg-gradient-to-br from-primary/5 to-secondary/5 shadow-lg">
-                <CardHeader className="text-center">
+                <CardHeader className={`text-center  `}>
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
                     <Target className="h-8 w-8" />
                   </div>
-                  <CardTitle className="text-2xl font-bold text-foreground">
+                  <CardTitle className="text-2xl font-bold text-center text-foreground">
                     {isRTL ? "مهمتنا" : "Our Mission"}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
+                <CardContent className={`text-center `}>
                   <p className="text-lg text-muted-foreground">
                     {isRTL
-                      ? "تمكين الشركات من تحقيق إمكاناتها الكاملة من خلال الاستشارات الاستراتيجية المبتكرة والحلول المخصصة التي تدفع النمو المستدام والنجاح طويل المدى"
-                      : "To empower businesses to achieve their full potential through innovative strategic consulting and tailored solutions that drive sustainable growth and long-term success"}
+                      ? "نهدف إلى تحسين جودة خدماتنا باستمرار، مع التزام قوي بالاستدامة والعناية البيئية. نحول المشاريع المعقدة إلى حلول فعالة ودقيقة وموثوقة"
+                      : "Our goal is to continuously improve the quality of our services, always with a strong commitment to sustainability and environmental care. We transform complex projects into efficient, precise, and reliable solutions"}
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="border-0 bg-gradient-to-br from-secondary/5 to-primary/5 shadow-lg">
-                <CardHeader className="text-center">
+                <CardHeader className={`text-center `}>
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-white">
                     <Eye className="h-8 w-8" />
                   </div>
-                  <CardTitle className="text-2xl font-bold text-foreground">
+                  <CardTitle className="text-2xl text-center font-bold text-foreground">
                     {isRTL ? "رؤيتنا" : "Our Vision"}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
+                <CardContent className={`text-center `}>
                   <p className="text-lg text-muted-foreground">
                     {isRTL
-                      ? "أن نكون الشريك الاستشاري الأكثر ثقة عالمياً، معروفين بتميزنا في تحويل التحديات إلى فرص وقيادة الشركات نحو مستقبل أكثر إشراقاً"
-                      : "To be the most trusted consulting partner globally, recognized for our excellence in transforming challenges into opportunities and leading businesses toward a brighter future"}
+                      ? "نساعد عملاءنا طوال دورة حياة المشروع بأكملها: من التخطيط والرقمنة إلى الإدارة والتنفيذ والتدريب المتخصص، لتحقيق أهدافهم من خلال الابتكار والأتمتة والتميز"
+                      : "We support our clients throughout the entire project lifecycle: from planning and digitalization to management, execution, and specialized training, helping them achieve their goals through innovation, automation, and excellence"}
                   </p>
                 </CardContent>
               </Card>
@@ -180,8 +208,24 @@ const AboutPagePreview = () => {
           </div>
         </section>
 
+        {/* Our Approach */}
+        <section className="bg-gray-50  py-16 dark:bg-gray-900">
+          <div className="container mx-auto px-4">
+            <div className=" text-center  justify-center items-center flex flex-col">
+              <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
+                {isRTL ? "نهجنا" : "Our Approach"}
+              </h2>
+              <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
+                {isRTL
+                  ? "تدير إدارة أفرانوفا كونسلتنغ نظام إدارة متكامل متوافق مع المعايير الدولية ISO 9001:2015 و ISO 14001:2015، مما يضمن الكفاءة والقدرة التنافسية والموثوقية عبر جميع مشاريعنا"
+                  : "The management of Avranova Consulting drives an integrated management system compliant with international standards ISO 9001:2015 and ISO 14001:2015, ensuring efficiency, competitiveness, and reliability across all our projects"}
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Values Section */}
-        <section className="bg-gray-50 py-20 dark:bg-gray-900">
+        <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="mb-16 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
@@ -189,8 +233,8 @@ const AboutPagePreview = () => {
               </h2>
               <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
                 {isRTL
-                  ? "القيم التي توجه كل ما نقوم به وتشكل أساس علاقاتنا مع العملاء"
-                  : "The values that guide everything we do and form the foundation of our client relationships"}
+                  ? "نؤمن أن التميز يتحقق من خلال دمج التكنولوجيا المتقدمة مع فريق مخصص عالي المهارة"
+                  : "We believe that excellence is achieved by combining advanced technology with a dedicated, highly skilled team"}
               </p>
             </div>
 
@@ -202,7 +246,7 @@ const AboutPagePreview = () => {
                     key={index}
                     className="group border-0 bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800"
                   >
-                    <CardHeader className="text-center">
+                    <CardHeader className={`text-center  `}>
                       <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
                         <Icon className="h-8 w-8" />
                       </div>
@@ -210,7 +254,7 @@ const AboutPagePreview = () => {
                         {value.title[isRTL ? "ar" : "en"]}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="text-center">
+                    <CardContent className={`text-center  `}>
                       <p className="text-muted-foreground">{value.description[isRTL ? "ar" : "en"]}</p>
                     </CardContent>
                   </Card>
@@ -221,7 +265,7 @@ const AboutPagePreview = () => {
         </section>
 
         {/* Achievements */}
-        <section className="py-20">
+        <section className="bg-gray-50 py-20 dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="mb-16 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
@@ -244,65 +288,112 @@ const AboutPagePreview = () => {
         </section>
 
         {/* Timeline */}
-        <section className="bg-gray-50 py-20 dark:bg-gray-900">
-          <div className="container mx-auto px-4">
-            <div className="mb-16 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                {isRTL ? "رحلتنا عبر السنين" : "Our Journey Through the Years"}
-              </h2>
+    <section className="py-20">
+  <div className="container mx-auto px-4">
+    <div className="mb-16 text-center">
+      <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
+        {isRTL ? "رحلتنا وتطورنا" : "Our Journey & Development"}
+      </h2>
+      <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+        {isRTL
+          ? "استكشف مراحل نمونا وتطورنا في عالم BIM و CAD"
+          : "Explore the milestones of our growth and development in the BIM & CAD world"}
+      </p>
+    </div>
+
+    <div className="relative max-w-4xl mx-auto">
+      {/* Center Line */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/30" />
+      
+      <div className="space-y-12">
+        {timeline.map((item, index) => (
+          <div key={index} className="relative flex items-center">
+            {/* Left Side Content (for even indices in LTR, odd in RTL) */}
+            <div className={`w-1/2 ${
+              ((!isRTL && index % 2 === 0) || (isRTL && index % 2 === 1)) 
+                ? `${isRTL ? 'pl-8' : 'pr-8'} ${isRTL ? 'text-left' : 'text-right'}` 
+                : ''
+            }`}>
+              {(((!isRTL && index % 2 === 0) || (isRTL && index % 2 === 1))) && (
+                <Card className="border-0 bg-white shadow-lg dark:bg-gray-800">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <Badge variant="secondary" className="text-primary">
+                        {item.year}
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-xl font-bold text-foreground">
+                      {item.title[isRTL ? "ar" : "en"]}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{item.description[isRTL ? "ar" : "en"]}</p>
+                  </CardContent>
+                </Card>
+              )}
             </div>
 
-            <div className="relative">
-              <div className="absolute left-1/2 h-full w-0.5 bg-primary/30 transform -translate-x-1/2" />
-              <div className="space-y-12">
-                {timeline.map((item, index) => (
-                  <div key={index} className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
-                    <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
-                      <Card className="border-0 bg-white shadow-lg dark:bg-gray-800">
-                        <CardHeader>
-                          <div className="flex items-center justify-between">
-                            <Badge variant="secondary" className="text-primary">
-                              {item.year}
-                            </Badge>
-                          </div>
-                          <CardTitle className="text-xl font-bold text-foreground">
-                            {item.title[isRTL ? "ar" : "en"]}
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-muted-foreground">{item.description[isRTL ? "ar" : "en"]}</p>
-                        </CardContent>
-                      </Card>
+            {/* Center Circle */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 flex h-4 w-4 items-center justify-center z-10">
+              <div className="h-4 w-4 rounded-full bg-primary border-2 border-white shadow-lg" />
+            </div>
+
+            {/* Right Side Content (for odd indices in LTR, even in RTL) */}
+            <div className={`w-1/2 ${
+              ((!isRTL && index % 2 === 1) || (isRTL && index % 2 === 0)) 
+                ? `${isRTL ? 'pr-8' : 'pl-8'} ${isRTL ? 'text-right' : 'text-left'}` 
+                : ''
+            }`}>
+              {(((!isRTL && index % 2 === 1) || (isRTL && index % 2 === 0))) && (
+                <Card className="border-0 bg-white shadow-lg dark:bg-gray-800">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <Badge variant="secondary" className="text-primary">
+                        {item.year}
+                      </Badge>
                     </div>
-                    <div className="relative flex h-4 w-4 items-center justify-center">
-                      <div className="h-4 w-4 rounded-full bg-primary" />
-                    </div>
-                    <div className="w-1/2" />
-                  </div>
-                ))}
-              </div>
+                    <CardTitle className="text-xl font-bold text-foreground">
+                      {item.title[isRTL ? "ar" : "en"]}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{item.description[isRTL ? "ar" : "en"]}</p>
+                  </CardContent>
+                </Card>
+              )}
             </div>
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Certifications */}
-        <section className="py-20">
+        <section className="bg-gray-50 py-20 dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="mb-16 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
                 {isRTL ? "شهاداتنا واعتماداتنا" : "Our Certifications & Accreditations"}
               </h2>
+              <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+                {isRTL
+                  ? "معترف بها من قبل المؤسسات الرائدة في الصناعة"
+                  : "Recognized by leading industry institutions"}
+              </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {certifications.map((cert, index) => (
                 <Card key={index} className="border-0 bg-white shadow-lg dark:bg-gray-800">
-                  <CardHeader className="text-center">
+                  <CardHeader className={`text-center  `}>
                     <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <Award className="h-6 w-6" />
                     </div>
                     <CardTitle className="text-lg font-bold text-foreground">{cert.name}</CardTitle>
-                    <CardDescription className="text-muted-foreground">{cert.type}</CardDescription>
+                    <CardDescription className="text-muted-foreground">
+                      {typeof cert.type === 'object' ? cert.type[isRTL ? "ar" : "en"] : cert.type}
+                    </CardDescription>
                   </CardHeader>
                 </Card>
               ))}
@@ -310,21 +401,80 @@ const AboutPagePreview = () => {
           </div>
         </section>
 
+        {/* Strategic Priorities */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="mb-16 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
+                {isRTL ? "أولوياتنا الاستراتيجية" : "Our Strategic Priorities"}
+              </h2>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: { en: "Quality Assurance", ar: "ضمان الجودة" },
+                  description: { en: "Ensure quality at every stage of the project by promoting teamwork and individual responsibility", ar: "ضمان الجودة في كل مرحلة من المشروع من خلال تعزيز العمل الجماعي والمسؤولية الفردية" }
+                },
+                {
+                  title: { en: "Client Satisfaction", ar: "رضا العملاء" },
+                  description: { en: "Continuously improve client satisfaction through efficient processes tailored to their needs", ar: "تحسين رضا العملاء باستمرار من خلال العمليات الفعالة المصممة لاحتياجاتهم" }
+                },
+                {
+                  title: { en: "Team Development", ar: "تطوير الفريق" },
+                  description: { en: "Foster professional development and active participation of our team in all management processes", ar: "تعزيز التطوير المهني والمشاركة الفعالة لفريقنا في جميع عمليات الإدارة" }
+                },
+                {
+                  title: { en: "Environmental Responsibility", ar: "المسؤولية البيئية" },
+                  description: { en: "Implement sustainable and environmentally responsible practices, going beyond legal requirements", ar: "تطبيق ممارسات مستدامة ومسؤولة بيئياً، تتجاوز المتطلبات القانونية" }
+                },
+                {
+                  title: { en: "Strategic Partnerships", ar: "الشراكات الاستراتيجية" },
+                  description: { en: "Establish strategic partnerships with suppliers to create shared value and elevate service quality", ar: "إقامة شراكات استراتيجية مع الموردين لخلق قيمة مشتركة ورفع جودة الخدمة" }
+                },
+                {
+                  title: { en: "Technology & AI", ar: "التكنولوجيا والذكاء الاصطناعي" },
+                  description: { en: "Leverage the latest technology, programming, and artificial intelligence to automate processes", ar: "الاستفادة من أحدث التقنيات والبرمجة والذكاء الاصطناعي لأتمتة العمليات" }
+                }
+              ].map((priority, index) => (
+                <Card key={index} className="border-0 bg-white shadow-lg dark:bg-gray-800">
+                  <CardHeader>
+                    <CardTitle className="text-lg font-bold text-foreground">
+                      {priority.title[isRTL ? "ar" : "en"]}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      {priority.description[isRTL ? "ar" : "en"]}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-primary to-secondary py-20 text-white">
-          <div className="container mx-auto px-4 text-center">
+    
+            <section className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 py-20 text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/engineering-blueprints-technical.png')] bg-cover bg-center opacity-5" />
+          <div className="container mx-auto px-4 text-center relative">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              {isRTL ? "انضم إلى رحلة النجاح" : "Join Our Success Story"}
+              {isRTL ? "ابدأ مشروعك التالي معنا" : "Start Your Next Project With Us"}
             </h2>
-            <p className="mb-8 text-xl text-white/90">
+           <p className="mb-8 text-xl text-white/90">
               {isRTL
-                ? "دعنا نساعدك في كتابة الفصل التالي من قصة نجاح شركتك"
-                : "Let us help you write the next chapter of your company's success story"}
+                ? "دعنا نحول مشاريعك المعقدة إلى حلول فعالة ودقيقة وموثوقة"
+                : "Let us transform your complex projects into efficient, precise, and reliable solutions"}
             </p>
-            <Button size="lg" variant="secondary" className="text-primary hover:text-primary/90">
-              {isRTL ? "ابدأ رحلتك معنا" : "Start Your Journey With Us"}
-              <ArrowRight className={`ml-2 h-5 w-5 ${isRTL ? "rotate-180" : ""}`} />
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+             <Link href="/contact">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                {isRTL ? "احصل على استشارة" : "Get Consultation"}
+                <ArrowRight className={`ml-2 h-5 w-5 ${isRTL ? "rotate-180" : ""}`} />
+              </Button></Link>
+             
+            </div>
           </div>
         </section>
       </main>

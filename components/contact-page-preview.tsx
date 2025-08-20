@@ -1,360 +1,269 @@
-'use client'
+"use client"
+import { useState } from "react"
+import type React from "react"
 
-import { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Users, Building, HeadphonesIcon } from 'lucide-react'
-import { SiteHeader } from './site-header'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react"
+ import { LanguageSwitcher } from "@/components/language-switcher"
+import { useI18n } from "@/lib/i18n"
 
-export default function ContactPage() {
-  const [language, setLanguage] = useState<'ar' | 'en'>('ar')
+export default function ContactUsPage() {
+  const { t, isRTL } = useI18n()
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   })
-
-  const isRTL = language === 'ar'
-
-  const content = {
-    ar: {
-      title: 'تواصل معنا',
-      subtitle: 'نحن هنا لمساعدتك في تحقيق أهدافك القانونية',
-      stats: [
-        { number: '50+', label: 'خبير متخصص', icon: Users },
-        { number: '3', label: 'مكاتب عالمية', icon: Building },
-        { number: '24/7', label: 'دعم متواصل', icon: HeadphonesIcon }
-      ],
-      contactMethods: [
-        {
-          icon: Phone,
-          title: 'اتصل بنا',
-          description: 'تحدث مع خبرائنا مباشرة',
-          value: '+966 11 123 4567',
-          action: 'اتصال'
-        },
-        {
-          icon: Mail,
-          title: 'راسلنا',
-          description: 'أرسل استفسارك عبر البريد',
-          value: 'info@lawfirm.com',
-          action: 'إرسال'
-        },
-        {
-          icon: MapPin,
-          title: 'زرنا',
-          description: 'تعال إلى مكتبنا الرئيسي',
-          value: 'الرياض، المملكة العربية السعودية',
-          action: 'الموقع'
-        }
-      ],
-      form: {
-        title: 'أرسل رسالة',
-        name: 'الاسم الكامل',
-        email: 'البريد الإلكتروني',
-        phone: 'رقم الهاتف',
-        subject: 'الموضوع',
-        message: 'الرسالة',
-        submit: 'إرسال الرسالة'
-      },
-      companyInfo: {
-        title: 'معلومات الشركة',
-        description: 'نحن مكتب محاماة رائد يقدم خدمات قانونية شاملة ومتميزة لعملائنا في جميع أنحاء المنطقة.',
-        workingHours: 'ساعات العمل',
-        hours: 'الأحد - الخميس: 9:00 ص - 6:00 م',
-        languages: 'اللغات المدعومة',
-        supportedLanguages: 'العربية، الإنجليزية، الفرنسية',
-        consultation: 'استشارة مجانية'
-      }
-    },
-    en: {
-      title: 'Contact Us',
-      subtitle: 'We are here to help you achieve your legal goals',
-      stats: [
-        { number: '50+', label: 'Expert Specialists', icon: Users },
-        { number: '3', label: 'Global Offices', icon: Building },
-        { number: '24/7', label: 'Continuous Support', icon: HeadphonesIcon }
-      ],
-      contactMethods: [
-        {
-          icon: Phone,
-          title: 'Call Us',
-          description: 'Speak directly with our experts',
-          value: '+966 11 123 4567',
-          action: 'Call'
-        },
-        {
-          icon: Mail,
-          title: 'Email Us',
-          description: 'Send your inquiry via email',
-          value: 'info@lawfirm.com',
-          action: 'Send'
-        },
-        {
-          icon: MapPin,
-          title: 'Visit Us',
-          description: 'Come to our main office',
-          value: 'Riyadh, Saudi Arabia',
-          action: 'Location'
-        }
-      ],
-      form: {
-        title: 'Send Message',
-        name: 'Full Name',
-        email: 'Email Address',
-        phone: 'Phone Number',
-        subject: 'Subject',
-        message: 'Message',
-        submit: 'Send Message'
-      },
-      companyInfo: {
-        title: 'Company Information',
-        description: 'We are a leading law firm providing comprehensive and distinguished legal services to our clients throughout the region.',
-        workingHours: 'Working Hours',
-        hours: 'Sunday - Thursday: 9:00 AM - 6:00 PM',
-        languages: 'Supported Languages',
-        supportedLanguages: 'Arabic, English, French',
-        consultation: 'Free Consultation'
-      }
-    }
-  }
-
-  const currentContent = content[language]
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+    // Simulate form submission
+    setIsSubmitted(true)
+    setTimeout(() => setIsSubmitted(false), 3000)
+    setFormData({ name: "", email: "", subject: "", message: "" })
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-blue-50 to-white ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+    <main
+      className={`min-h-screen bg-gradient-to-br from-primary/5 via-background to-accent/5  `}
+    >
+     
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#003366] via-[#0097ed] to-[#003366] text-white">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-[#0097ed]/20 to-transparent rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative container mx-auto px-6 py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className={`text-5xl md:text-6xl font-bold mb-6 ${isRTL ? 'font-serif' : 'font-sans'}`}>
-              {currentContent.title}
-            </h1>
-            <p className={`text-xl md:text-2xl mb-12 text-blue-100 ${isRTL ? 'font-serif' : 'font-sans'}`}>
-              {currentContent.subtitle}
-            </p>
-
-            {/* Stats Section */}
-            <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 ${isRTL ? 'text-right' : 'text-left'}`}>
-              {currentContent.stats.map((stat, index) => {
-                const IconComponent = stat.icon
-                return (
-                  <div key={index} className={`bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 ${isRTL ? 'text-right' : 'text-left'}`}>
-                    <div className={`flex items-center gap-4 mb-4 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}>
-                      <div className="bg-white/20 p-3 rounded-xl">
-                        <IconComponent className="w-8 h-8 text-white" />
-                      </div>
-                      <div className={`text-4xl font-bold ${isRTL ? 'text-right' : 'text-left'}`}>
-                        {stat.number}
-                      </div>
-                    </div>
-                    <p className={`text-blue-100 text-lg ${isRTL ? 'font-serif text-right' : 'font-sans text-left'}`}>
-                      {stat.label}
-                    </p>
-                  </div>
-                )
-              })}
-            </div>
+    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-24 text-white overflow-hidden">
+       <div className="absolute inset-0 bg-[url('/architectural-blueprints.png')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20" />
+             <div className="max-w-4xl mx-auto flex-col flex justify-center items-center text-center">
+                 <div className="absolute inset-0 bg-black/10" />
+        <div className="max-w-4xl mx-auto text-center relative">
+  <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <Mail className="w-4 h-4" />
+            {t("contact")}
           </div>
+          <h1 className="text-4xl md:text-6xl flex flex-col font-bold text-white mb-6">
+            {t("getInTouch")}{" "}
+            
+            <span className={`text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 ${isRTL ? "mt-4" : ""}`}>
+              Avranova Consulting
+            </span>
+          </h1>
+    <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">{t("contactDescription")}</p>        </div>
         </div>
-      </div>
+      </section>
 
-      {/* Contact Methods */}
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto ${isRTL ? 'text-right' : 'text-left'}`}>
-            {currentContent.contactMethods.map((method, index) => {
-              const IconComponent = method.icon
-              return (
-                <div key={index} className="group">
-                  <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-3xl border border-blue-100 hover:shadow-2xl hover:scale-105 transition-all duration-300 h-full">
-                    <div className={`flex items-center gap-4 mb-6 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}>
-                      <div className="bg-gradient-to-br from-[#0097ed] to-[#003366] p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="w-8 h-8 text-white" />
+      {/* Main Content */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto relative">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <Card className="shadow-xl max-h-max sticky border-0 bg-card/50 backdrop-blur-sm">
+              <CardHeader className="pb-8">
+                <CardTitle className={`text-2xl font-bold flex items-center gap-2 ${isRTL && "justify-start"}`}>
+              {
+                isRTL ? (<>
+                  {t("sendMessage")}
+                    <Send className="w-6 h-6 text-primary" />
+                </>) : (<>
+                    <Send className="w-6 h-6 text-primary" />
+                  {t("sendMessage")}</>)
+              }
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                {isSubmitted ? (
+                  <div className="text-center py-12">
+                    <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold text-foreground mb-2">{t("sendMessage")}!</h3>
+                    <p className="text-muted-foreground">{t("responseIn24h")}</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="name" className="text-sm font-medium">
+                          {t("yourName")}
+                        </Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder={t("enterYourName")}
+                          required
+                          className="h-12 bg-input/50 border-border/50 focus:border-primary transition-colors"
+                        />
                       </div>
-                      <h3 className={`text-2xl font-bold text-[#003366] ${isRTL ? 'font-serif' : 'font-sans'}`}>
-                        {method.title}
-                      </h3>
+                      <div className="space-y-2">
+                        <Label htmlFor="email" className="text-sm font-medium">
+                          {t("yourEmail")}
+                        </Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder={t("enterYourEmail")}
+                          required
+                          className="h-12 bg-input/50 border-border/50 focus:border-primary transition-colors"
+                        />
+                      </div>
                     </div>
-                    <p className={`text-gray-600 mb-4 text-lg ${isRTL ? 'font-serif' : 'font-sans'}`}>
-                      {method.description}
-                    </p>
-                    <p className={`text-[#0097ed] font-semibold mb-6 text-lg ${isRTL ? 'font-serif' : 'font-sans'}`}>
-                      {method.value}
-                    </p>
-                    <button className="w-full bg-gradient-to-r from-[#0097ed] to-[#003366] text-white py-3 px-6 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
-                      {method.action}
-                    </button>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Form and Company Info */}
-      <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-6">
-          <div className={`grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-7xl mx-auto ${isRTL ? 'text-right' : 'text-left'}`}>
-            {/* Contact Form - 3 columns */}
-            <div className="lg:col-span-3">
-              <div className="bg-white rounded-3xl shadow-2xl p-8 border border-blue-100">
-                <h2 className={`text-3xl font-bold text-[#003366] mb-8 ${isRTL ? 'font-serif text-right' : 'font-sans text-left'}`}>
-                  {currentContent.form.title}
-                </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className={`block text-gray-700 font-semibold mb-2 ${isRTL ? 'font-serif text-right' : 'font-sans text-left'}`}>
-                        {currentContent.form.name}
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0097ed] focus:border-transparent transition-all duration-300 text-lg ${isRTL ? 'text-right font-serif' : 'text-left font-sans'}`}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className={`block text-gray-700 font-semibold mb-2 ${isRTL ? 'font-serif text-right' : 'font-sans text-left'}`}>
-                        {currentContent.form.email}
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0097ed] focus:border-transparent transition-all duration-300 text-lg ${isRTL ? 'text-right font-serif' : 'text-left font-sans'}`}
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className={`block text-gray-700 font-semibold mb-2 ${isRTL ? 'font-serif text-right' : 'font-sans text-left'}`}>
-                        {currentContent.form.phone}
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0097ed] focus:border-transparent transition-all duration-300 text-lg ${isRTL ? 'text-right font-serif' : 'text-left font-sans'}`}
-                      />
-                    </div>
-                    <div>
-                      <label className={`block text-gray-700 font-semibold mb-2 ${isRTL ? 'font-serif text-right' : 'font-sans text-left'}`}>
-                        {currentContent.form.subject}
-                      </label>
-                      <input
-                        type="text"
+                    <div className="space-y-2">
+                      <Label htmlFor="subject" className="text-sm font-medium">
+                        {t("phoneNumber")}
+                      </Label>
+                      <Input
+                        id="subject"
                         name="subject"
                         value={formData.subject}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0097ed] focus:border-transparent transition-all duration-300 text-lg ${isRTL ? 'text-right font-serif' : 'text-left font-sans'}`}
+                        onChange={handleChange}
+                        placeholder={t("enterYourPhone")}
                         required
+                        className="h-12 bg-input/50 border-border/50 focus:border-primary transition-colors"
                       />
                     </div>
-                  </div>
-                  <div>
-                    <label className={`block text-gray-700 font-semibold mb-2 ${isRTL ? 'font-serif text-right' : 'font-sans text-left'}`}>
-                      {currentContent.form.message}
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      rows={6}
-                      className={`w-full px-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#0097ed] focus:border-transparent transition-all duration-300 resize-none text-lg ${isRTL ? 'text-right font-serif' : 'text-left font-sans'}`}
-                      required
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-[#0097ed] to-[#003366] text-white py-4 px-8 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
-                  >
-                    {currentContent.form.submit}
-                  </button>
-                </form>
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-sm font-medium">
+                        {t("yourMessage")}
+                      </Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder={t("enterYourMessage")}
+                        required
+                        rows={6}
+                        className="bg-input/50 border-border/50 focus:border-primary transition-colors resize-none"
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-all duration-200 hover:shadow-lg hover:shadow-primary/25"
+                    >
+                      <Send className="w-4 h-4 mr-2" />
+                      {t("sendMessage")}
+                    </Button>
+                  </form>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Company Information */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl font-bold text-foreground mb-6">{t("getInTouch")}</h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">{t("contactDescription")}</p>
               </div>
-            </div>
 
-            {/* Company Info - 2 columns */}
-            <div className="lg:col-span-2">
-              <div className="bg-gradient-to-br from-[#003366] to-[#0097ed] text-white rounded-3xl shadow-2xl p-8 h-full">
-                <h2 className={`text-3xl font-bold mb-8 ${isRTL ? 'font-serif text-right' : 'font-sans text-left'}`}>
-                  {currentContent.companyInfo.title}
-                </h2>
-                
-                <div className="space-y-8">
-                  <p className={`text-blue-100 text-lg leading-relaxed ${isRTL ? 'font-serif text-right' : 'font-sans text-left'}`}>
-                    {currentContent.companyInfo.description}
-                  </p>
-
-                  <div className={`space-y-6 ${isRTL ? 'text-right' : 'text-left'}`}>
-                    <div className={`flex items-start gap-4 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}>
-                      <div className="bg-white/20 p-3 rounded-xl flex-shrink-0">
-                        <Clock className="w-6 h-6 text-white" />
+              <div className="space-y-6">
+                {/* Contact Cards */}
+                <Card className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary bg-card/50 backdrop-blur-sm">
+                  <CardContent className="p-6">
+                    <div className={`flex items-start gap-4 ${isRTL ? "justify-start" : ""}`}>
+                   {isRTL ? (<>
+                   
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-1">{t("callUs")}</h3>
+                        <p className="text-muted-foreground">{t("phoneValue")}</p>
+                        <p className="text-sm text-muted-foreground mt-1">{t("mondayToFriday")}</p>
+                      </div>
+                      <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                        <Phone className="w-6 h-6 text-primary" />
+                      </div>
+                   </>) : (<>
+                   
+                      <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                        <Phone className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className={`font-bold text-lg mb-2 ${isRTL ? 'font-serif' : 'font-sans'}`}>
-                          {currentContent.companyInfo.workingHours}
-                        </h3>
-                        <p className={`text-blue-100 ${isRTL ? 'font-serif' : 'font-sans'}`}>
-                          {currentContent.companyInfo.hours}
-                        </p>
-                      </div>
+                        <h3 className="font-semibold text-foreground mb-1">{t("callUs")}</h3>
+                        <p className="text-muted-foreground">{t("phoneValue")}</p>
+                        <p className="text-sm text-muted-foreground mt-1">{t("mondayToFriday")}</p>
+                      </div></>)}
                     </div>
+                  </CardContent>
+                </Card>
 
-                    <div className={`flex items-start gap-4 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}>
-                      <div className="bg-white/20 p-3 rounded-xl flex-shrink-0">
-                        <Users className="w-6 h-6 text-white" />
+                <Card className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-accent bg-card/50 backdrop-blur-sm">
+                  <CardContent className="p-6">
+                    <div className={`flex items-start gap-4 ${isRTL ? "justify-start" : ""}`}>
+                   {isRTL ? (<>
+                   
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-1">{t("emailUs")}</h3>
+                        <p className="text-muted-foreground">{t("emailValue")}</p>
+                        <p className="text-sm text-muted-foreground mt-1">{t("responseIn24h")}</p>
+                      </div>
+                      <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
+                        <Mail className="w-6 h-6 text-accent" />
+                      </div>
+                   </>):(<>
+                      <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
+                        <Mail className="w-6 h-6 text-accent" />
                       </div>
                       <div>
-                        <h3 className={`font-bold text-lg mb-2 ${isRTL ? 'font-serif' : 'font-sans'}`}>
-                          {currentContent.companyInfo.languages}
-                        </h3>
-                        <p className={`text-blue-100 ${isRTL ? 'font-serif' : 'font-sans'}`}>
-                          {currentContent.companyInfo.supportedLanguages}
-                        </p>
-                      </div>
+                        <h3 className="font-semibold text-foreground mb-1">{t("emailUs")}</h3>
+                        <p className="text-muted-foreground">{t("emailValue")}</p>
+                        <p className="text-sm text-muted-foreground mt-1">{t("responseIn24h")}</p>
+                      </div></>)}
                     </div>
-                  </div>
+                  </CardContent>
+                </Card>
 
-                  <div className="pt-8 border-t border-white/20">
-                    <button className="w-full bg-white text-[#003366] py-4 px-8 rounded-xl font-bold text-lg hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-lg">
-                      {currentContent.companyInfo.consultation}
-                    </button>
-                  </div>
-                </div>
+                <Card className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-accent bg-card/50 backdrop-blur-sm">
+                  <CardContent className="p-6">
+                    <div className={`flex items-start gap-4 ${isRTL ? "justify-start" : ""}`}>
+                     {isRTL ? (<>
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-1">{t("visitUs")}</h3>
+                        <p className="text-muted-foreground">{t("ourAddress")}</p>
+                      </div>
+                      <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
+                        <MapPin className="w-6 h-6 text-primary" />
+                      </div>
+                     </>) : (<>
+                      <div className="p-3 bg-secondary/10 rounded-lg group-hover:bg-secondary/20 transition-colors">
+                        <MapPin className="w-6 h-6 text-secondary" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-1">{t("visitUs")}</h3>
+                        <p className="text-muted-foreground">{t("ourAddress")}</p>
+                      </div></>)}
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-            </div>
+
+              {/* Map Placeholder */}
+               
+             </div>
           </div>
-        </div>
-      </div>
+             <div className="w-full mt-12 h-[500px] max-sm:h-[390px]">
 
-    </div>
+                <iframe
+                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1106.5356686708733!2d29.22952038426281!3d40.99188544976844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2str!4v1755729273967!5m2!1sen!2str"
+                      style={{width: "100%", height: "100%", border: "0"}}
+                 loading="lazy" ></iframe>
+                 </div>
+          
+        </div>
+
+      </section>
+      
+    </main>
   )
 }

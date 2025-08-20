@@ -128,12 +128,12 @@ export default function GlobalPresenceSection() {
               {/* Updated responsive text layout */}
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                 {isRTL ? (
-                  <div className="space-y-2">
-                    <div>حضور</div>
-                    <PointerHighlight>
-                      <span className="text-primary">عالمي</span>
-                    </PointerHighlight>
+                  <div className="space-y-2 flex  flex-row gap-4 justify-start"  >
                     <div>متميز</div>
+                    <PointerHighlight>
+                      <span className="text-primary" dir="ltr">عالمي</span>
+                    </PointerHighlight>
+                    <div>حضور</div>
                   </div>
                 ) : (
                   <div className="space-y-2">
@@ -178,24 +178,43 @@ export default function GlobalPresenceSection() {
             </div>
 
             {/* Key Features */}
-            <div className="space-y-4">
+            <div className={`space-y-4 ${isRTL && "flex flex-col items-start "}`}>
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-foreground font-medium">
+                {isRTL ? (<>
+                   <span className="text-foreground font-medium">
                   {isRTL ? "خبرة محلية في كل منطقة" : "Local expertise in every region"}
                 </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary" />
+                   <div className="w-2 h-2 rounded-full bg-primary" />
+             
+                </>) : (<>   <div className="w-2 h-2 rounded-full bg-primary" />
                 <span className="text-foreground font-medium">
+                  {isRTL ? "خبرة محلية في كل منطقة" : "Local expertise in every region"}
+                </span></>)}
+             
+              </div>
+              <div className="flex items-center gap-3">                {isRTL ? (<>
+                    <span className="text-foreground font-medium">
                   {isRTL ? "معايير جودة عالمية موحدة" : "Unified global quality standards"}
                 </span>
+                 <div className="w-2 h-2 rounded-full bg-primary" />
+             
+              </>) : (<>
+                
+                 <div className="w-2 h-2 rounded-full bg-primary" />   <span className="text-foreground font-medium">
+                  {isRTL ? "معايير جودة عالمية موحدة" : "Unified global quality standards"}
+                </span></>)}
+
+             
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="flex items-center gap-3">                {isRTL ? (<>   <span className="text-foreground font-medium">
+                  {isRTL ? "دعم متعدد اللغات والثقافات" : "Multi-language and cultural support"}
+                </span> <div className="w-2 h-2 rounded-full bg-primary" />
+              </>) : (<>  <div className="w-2 h-2 rounded-full bg-primary" />
                 <span className="text-foreground font-medium">
                   {isRTL ? "دعم متعدد اللغات والثقافات" : "Multi-language and cultural support"}
-                </span>
+                </span></>)}
+
+              
               </div>
             </div>
           </div>
@@ -214,14 +233,14 @@ export default function GlobalPresenceSection() {
               <div className="absolute top-3 left-3 sm:top-6 sm:left-6 bg-slate-800/90 backdrop-blur-sm rounded-lg p-2 sm:p-3 border border-purple-500/30">
                 <div className="flex items-center gap-2 text-xs sm:text-sm">
                   <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-purple-400 animate-pulse" />
-                  <span className="text-purple-100 font-medium">{isRTL ? "اتصالات نشطة" : "Active Connections"}</span>
+                  <span className="text-purple-100 font-medium">Active Connections</span>
                 </div>
               </div>
 
               <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 bg-slate-800/90 backdrop-blur-sm rounded-lg p-2 sm:p-3 border border-purple-500/30">
                 <div className="flex items-center gap-2 text-xs sm:text-sm">
                   <div className="w-2 h-2 rounded-full bg-green-400" />
-                  <span className="text-purple-100 font-medium">8 {isRTL ? "اتصالات" : "Connections"}</span>
+                  <span className="text-purple-100 font-medium">8 Connections</span>
                 </div>
               </div>
             </div>
