@@ -59,7 +59,7 @@ export function PartnersSection() {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">{t("partners_description")}</p>
         </div>
 
-        <div className="relative mb-16">
+        {/* <div className="relative mb-16">
           <div className="overflow-hidden mask-gradient">
             <div
               className={`flex gap-12 transition-transform duration-1000 ${isVisible ? "animate-infinite-scroll" : ""}`}
@@ -80,7 +80,7 @@ export function PartnersSection() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className={`text-center ${isRTL ? "rtl" : "ltr"}`}>
           <div className="relative bg-gradient-to-br from-primary via-primary/90 to-primary/80 rounded-3xl p-12 text-primary-foreground overflow-hidden">

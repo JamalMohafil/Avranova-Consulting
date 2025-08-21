@@ -58,7 +58,7 @@ const AboutPagePreview = () => {
       description: { en: "In BIM & CAD", ar: "في BIM و CAD" },
     },
     {
-      number: "50+",
+      number: "5+",
       title: { en: "Satisfied Clients", ar: "عميل راضٍ" },
       description: { en: "Worldwide", ar: "حول العالم" },
     },

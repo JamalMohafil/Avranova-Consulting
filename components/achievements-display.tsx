@@ -9,13 +9,13 @@ export function AchievementsDisplay() {
   const achievements = [
     {
       icon: Users,
-      number: "500+",
+      number: "5+",
       label: t("clients_served"),
       description: t("trusted_organizations"),
     },
     {
       icon: Trophy,
-      number: "1,200+",
+      number: "20+",
       label: t("projects_completed"),
       description: t("delivered_worldwide"),
     },

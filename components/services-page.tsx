@@ -30,6 +30,28 @@ export function ServicesPagePreview() {
   const { t, isRTL } = useI18n()
 
   const services = [
+     {
+      id: "international-partnerships",
+      icon: Globe,
+      title: {
+        en: "International Project Partnerships",
+        ar: "شراكات المشاريع الدولية",
+      },
+      description: {
+        en: "Strategic bridge between Syrian companies and European firms for large-scale infrastructure projects",
+        ar: "جسر استراتيجي بين الشركات السورية والشركات الأوروبية لمشاريع البنية التحتية الكبيرة",
+      },
+      features: [
+        { en: "Airport & Energy Projects", ar: "مشاريع المطارات والطاقة" },
+        { en: "Water Infrastructure", ar: "البنية التحتية للمياه" },
+        { en: "Urban Reconstruction", ar: "إعادة الإعمار الحضري" },
+        { en: "On-site Supervision", ar: "الإشراف الميداني" },
+      ],
+      deliverables: {
+        en: "Partnership Agreements, Project Supervision, Knowledge Transfer, Quality Implementation",
+        ar: "اتفاقيات الشراكة، إشراف المشروع، نقل المعرفة، التنفيذ عالي الجودة",
+      },
+    },
     {
       id: "bim-services",
       icon: Layers3,
@@ -96,28 +118,7 @@ export function ServicesPagePreview() {
         ar: "الرسوم التقنية، مخططات التصنيع، التوثيق، القياسات",
       },
     },
-    {
-      id: "international-partnerships",
-      icon: Globe,
-      title: {
-        en: "International Project Partnerships",
-        ar: "شراكات المشاريع الدولية",
-      },
-      description: {
-        en: "Strategic bridge between Syrian companies and European firms for large-scale infrastructure projects",
-        ar: "جسر استراتيجي بين الشركات السورية والشركات الأوروبية لمشاريع البنية التحتية الكبيرة",
-      },
-      features: [
-        { en: "Airport & Energy Projects", ar: "مشاريع المطارات والطاقة" },
-        { en: "Water Infrastructure", ar: "البنية التحتية للمياه" },
-        { en: "Urban Reconstruction", ar: "إعادة الإعمار الحضري" },
-        { en: "On-site Supervision", ar: "الإشراف الميداني" },
-      ],
-      deliverables: {
-        en: "Partnership Agreements, Project Supervision, Knowledge Transfer, Quality Implementation",
-        ar: "اتفاقيات الشراكة، إشراف المشروع، نقل المعرفة، التنفيذ عالي الجودة",
-      },
-    },
+   
     {
       id: "digitalization",
       icon: Archive,
@@ -126,8 +127,8 @@ export function ServicesPagePreview() {
         ar: "خدمات الرقمنة",
       },
       description: {
-        en: "Comprehensive digitalization solutions organizing and optimizing archives, servers, and documentation systems",
-        ar: "حلول رقمنة شاملة تنظم وتحسن الأرشيف والخوادم وأنظمة التوثيق",
+        en: "Comprehensive digitalization solutions organizing and optimizing archives, servers, and documentation systems for government and private companies",
+        ar: " حلول رقمنة شاملة تنظم وتحسن الأرشيف والخوادم وأنظمة التوثيق ومثالي للشركات الحكومية والخاصة",
       },
       features: [
         { en: "Document Scanning & Digitizing", ar: "مسح ورقمنة الوثائق" },
@@ -248,6 +249,8 @@ export function ServicesPagePreview() {
       description: { en: "Optimized processes reducing errors and timelines", ar: "العمليات المحسنة تقلل الأخطاء والمواعيد النهائية" },
     },
   ]
+
+  // London,Argentina, Spain, Saudi Arabia, Syria
 
   return (
     <div className="flex min-h-screen flex-col" dir={isRTL ? "rtl" : "ltr"}>

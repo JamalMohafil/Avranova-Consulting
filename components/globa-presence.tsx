@@ -158,11 +158,11 @@ export default function GlobalPresenceSection() {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">50+</div>
+                <div className="text-3xl font-bold text-primary">5+</div>
                 <div className="text-sm text-muted-foreground font-medium">{t("countriesServed")}</div>
               </div>
               <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">1000+</div>
+                <div className="text-3xl font-bold text-primary">20+</div>
                 <div className="text-sm text-muted-foreground font-medium">{t("projectsCompleted")}</div>
               </div>
               <div className="space-y-2">

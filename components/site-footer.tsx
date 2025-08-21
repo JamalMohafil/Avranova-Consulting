@@ -58,9 +58,9 @@ export function SiteFooter() {
   ]
 
   const stats = [
-    { icon: Users, value: "500+", label: t("clientsServed") },
-    { icon: Award, value: "1000+", label: t("projectsCompleted") },
-    { icon: Globe, value: "25+", label: t("countriesServed") },
+    { icon: Users, value: "5+", label: t("clientsServed") },
+    { icon: Award, value: "20+", label: t("projectsCompleted") },
+    { icon: Globe, value: "5+", label: t("countriesServed") },
     { icon: Zap, value: "99%", label: t("successRate") },
   ]
 

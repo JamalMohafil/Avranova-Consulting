@@ -486,7 +486,7 @@ const translations: Translations = {
   },
   partners_description: {
     en: "We collaborate with industry-leading technology providers to deliver cutting-edge solutions.",
-    ar: "نتعاون مع مقدمي التكنولوجيا الرائدين في الصناعة لتقديم حلول متطورة.",
+    ar: "نتعاون مع استشاريين هندسيين رائدين في مجال التكنولوجيا لتقديم حلول متطورة",
   },
   ready_to_partner: {
     en: "Ready to Partner With Us?",
