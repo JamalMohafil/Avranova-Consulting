@@ -131,7 +131,39 @@ const translations: Translations = {
   years_leading: {
     en: "Years Leading",
     ar: "سنوات من الريادة",
-  },
+  },system_integration: {
+  en: "System Integration",
+  ar: "تكامل الأنظمة",
+},
+energy_analysis: {
+  en: "Energy Analysis",
+  ar: "تحليل الطاقة",
+},
+code_compliance: {
+  en: "Code Compliance",
+  ar: "الامتثال للمعايير",
+},
+performance_optimization: {
+  en: "Performance Optimization",
+  ar: "تحسين الأداء",
+},
+three_modeling: {
+  en: "3D Modeling",
+  ar: "النمذجة ثلاثية الأبعاد",
+},
+clash_detection: {
+  en: "Clash Detection",
+  ar: "كشف التعارضات",
+},
+project_coordination: {
+  en: "Project Coordination",
+  ar: "تنسيق المشاريع",
+},
+quality_assurance: {
+  en: "Quality Assurance",
+  ar: "ضمان الجودة",
+},
+
   awards_won: {
     en: "Awards Won",
     ar: "جوائز محققة",

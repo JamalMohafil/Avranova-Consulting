@@ -14,7 +14,7 @@ export function ServicesPreview() {
       title: t("bimCoordination"),
       description: t("bimCoordinationDesc"),
       features: [
-        t("3d_modeling") || "3D Modeling",
+        t("three_modeling") || "3D Modeling",
         t("clash_detection") || "Clash Detection",
         t("project_coordination") || "Project Coordination",
         t("quality_assurance") || "Quality Assurance",
