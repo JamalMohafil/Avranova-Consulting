@@ -31,82 +31,48 @@ export default function GlobalPresenceSection() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   }
-  const colors = ["#06b6d4", "#3b82f6", "#6366f1"]
+  const colors = ["#06b6d4", "#3b82f6", "#6366f1",  "#9B59B6", // بنفسجي
+]
   const sampleArcs = [
-     {
-      order: 1,
-      startLat: 36.2021,
-      startLng: 37.1343,
-      endLat: 40.4168, // Madrid, Spain
-      endLng: -3.7038,
-      arcAlt: 0.3,
-      color: colors[0],
-    },
-    {
-      order: 2,
-      startLat: 36.2021,
-      startLng: 37.1343,
-      endLat: 40.7128, // New York, USA
-      endLng: -74.006,
-      arcAlt: 0.2,
-      color: colors[1],
-    },
-    {
-      order: 3,
-      startLat: 36.2021,
-      startLng: 37.1343,
-      endLat: 48.8566, // Paris, France
-      endLng: 2.3522,
-      arcAlt: 0.2,
-      color: colors[2],
-    },
-    {
-      order: 4,
-      startLat: 36.2021,
-      startLng: 37.1343,
-      endLat: 39.9042, // Beijing, China
-      endLng: 116.4074,
-      arcAlt: 0.6,
-      color: colors[0],
-    },
-    // From Damascus, Syria to international destinations
-    {
-      order: 5,
-      startLat: 33.5138,
-      startLng: 36.2765,
-      endLat: 40.4168, // Madrid, Spain
-      endLng: -3.7038,
-      arcAlt: 0.4,
-      color: colors[1],
-    },
-    {
-      order: 6,
-      startLat: 33.5138,
-      startLng: 36.2765,
-      endLat: 40.7128, // New York, USA
-      endLng: -74.006,
-      arcAlt: 0.7,
-      color: colors[2],
-    },
-    {
-      order: 7,
-      startLat: 33.5138,
-      startLng: 36.2765,
-      endLat: 48.8566, // Paris, France
-      endLng: 2.3522,
-      arcAlt: 0.3,
-      color: colors[0],
-    },
-    {
-      order: 8,
-      startLat: 33.5138,
-      startLng: 36.2765,
-      endLat: 39.9042, // Beijing, China
-      endLng: 116.4074,
-      arcAlt: 0.5,
-      color: colors[1],
-    },
-  ]
+  {
+    order: 1,
+    startLat: 34.7308,
+    startLng: 36.7090,  // حمص - سوريا
+    endLat: -34.6037,
+    endLng: -58.3816,   // بوينس آيرس - الأرجنتين
+    arcAlt: 0.6,
+    color: colors[0],
+  },
+  {
+    order: 2,
+    startLat: 34.7308,
+    startLng: 36.7090,  // حمص - سوريا
+    endLat: 24.7136,
+    endLng: 46.6753,    // الرياض - السعودية
+    arcAlt: 0.3,
+    color: colors[1],
+  },
+  {
+    order: 3,
+    startLat: 34.7308,
+    startLng: 36.7090,  // حمص - سوريا
+    endLat: 51.5074,
+    endLng: -0.1278,    // لندن - بريطانيا
+    arcAlt: 0.4,
+    color: colors[2],
+  },
+  {
+    order: 4,
+    startLat: 34.7308,
+    startLng: 36.7090,  // حمص - سوريا
+    endLat: 40.4168,
+    endLng: -3.7038,    // مدريد - إسبانيا
+    arcAlt: 0.5,
+    color: colors[3],
+  },
+];
+
+
 
   return (
     <section className="relative py-24 overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">

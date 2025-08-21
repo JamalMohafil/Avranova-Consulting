@@ -28,7 +28,7 @@ export function SiteHeader() {
     { href: "/", label: t("home") },
     { href: "/services", label: t("services") },
     { href: "/about", label: t("about") },
-    { href: "/team", label: t("team") },
+ 
     { href: "/case-studies", label: t("caseStudies") },
     { href: "/contact", label: t("contact") },
   ]

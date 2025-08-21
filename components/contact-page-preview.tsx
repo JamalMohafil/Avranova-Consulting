@@ -254,10 +254,10 @@ export default function ContactUsPage() {
           </div>
              <div className="w-full mt-12 h-[500px] max-sm:h-[390px]">
 
-                <iframe
-                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1106.5356686708733!2d29.22952038426281!3d40.99188544976844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2str!4v1755729273967!5m2!1sen!2str"
-                      style={{width: "100%", height: "100%", border: "0"}}
-                 loading="lazy" ></iframe>
+           
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3279.17871038229!2d36.70773187574552!3d34.72588947291066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDQzJzMzLjIiTiAzNsKwNDInMzcuMSJF!5e0!3m2!1sen!2str!4v1755781527024!5m2!1sen!2str"  
+                   loading="lazy"                       style={{width: "100%", height: "100%", border: "0"}}
+></iframe>
                  </div>
           
         </div>

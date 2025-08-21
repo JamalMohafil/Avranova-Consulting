@@ -49,7 +49,7 @@ export function HeroSection() {
       className="relative w-full h-[78vh] sm:h-[80vh] lg:h-[95vh] pb-12 sm:py-20 lg:py-60 flex justify-center items-center
      min-h-[500px] overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 dark:from-slate-950 dark:via-blue-950 dark:to-slate-900"
     >
-      <div
+       <div
         className={`absolute top-20 z-15 opacity-60 animate-pulse hidden lg:block ${isRTL ? "left-20" : "right-20"}`}
       >
         <Cog className="h-20 w-20 text-primary" />

@@ -53,28 +53,6 @@ export function ServicesPagePreview() {
       },
     },
     {
-      id: "bim-services",
-      icon: Layers3,
-      title: {
-        en: "BIM Services",
-        ar: "خدمات نمذجة معلومات البناء",
-      },
-      description: {
-        en: "Advanced BIM solutions supporting Engineers, Architects, Constructors, and Manufacturers with comprehensive modeling for all project types",
-        ar: "حلول BIM متقدمة تدعم المهندسين والمعماريين والمقاولين والمصنعين بنمذجة شاملة لجميع أنواع المشاريع",
-      },
-      features: [
-        { en: "Architectural, Structural & MEP Modeling", ar: "النمذجة المعمارية والإنشائية والـ MEP" },
-        { en: "3D Renderings & Animations", ar: "العروض ثلاثية الأبعاد والرسوم المتحركة" },
-        { en: "4D/5D Planning & Simulations", ar: "التخطيط والمحاكاة 4D/5D" },
-        { en: "Virtual Reality Experiences", ar: "تجارب الواقع الافتراضي" },
-      ],
-      deliverables: {
-        en: "BIM Models, Plans & Reports, Quantity Take-offs, Multidisciplinary Coordination",
-        ar: "نماذج BIM، المخططات والتقارير، استخراج الكميات، التنسيق متعدد التخصصات",
-      },
-    },
-    {
       id: "bim-consulting",
       icon: Users,
       title: {
@@ -97,11 +75,34 @@ export function ServicesPagePreview() {
       },
     },
     {
+      id: "bim-services",
+      icon: Layers3,
+      title: {
+        en: "BIM Services",
+        ar: "خدمات نمذجة معلومات البناء",
+      },
+      description: {
+        en: "Advanced BIM solutions supporting Engineers, Architects, Constructors, and Manufacturers with comprehensive modeling for all project types",
+        ar: "حلول BIM متقدمة تدعم المهندسين والمعماريين والمقاولين والمصنعين بنمذجة شاملة لجميع أنواع المشاريع",
+      },
+      features: [
+        { en: "Architectural, Structural & MEP Modeling", ar: "النمذجة المعمارية والإنشائية والـ MEP" },
+        { en: "3D Renderings & Animations", ar: "العروض ثلاثية الأبعاد والرسوم المتحركة" },
+        { en: "4D/5D Planning & Simulations", ar: "التخطيط والمحاكاة 4D/5D" },
+        { en: "Virtual Reality Experiences", ar: "تجارب الواقع الافتراضي" },
+      ],
+      deliverables: {
+        en: "BIM Models, Plans & Reports, Quantity Take-offs, Multidisciplinary Coordination",
+        ar: "نماذج BIM، المخططات والتقارير، استخراج الكميات، التنسيق متعدد التخصصات",
+      },
+    },
+    
+    {
       id: "cad-services",
       icon: FileText,
       title: {
         en: "CAD Services",
-        ar: "خدمات الرسم بمساعدة الحاسوب",
+        ar: "  خدمات الرسم بالحاسوب CAD ",
       },
       description: {
         en: "Comprehensive CAD services supporting all project stages with precise documentation and detailed drawings",
